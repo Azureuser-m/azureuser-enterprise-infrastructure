@@ -1,0 +1,18 @@
+[sssd]
+domains = corp.azureuser.org
+config_file_version = 2
+services = nss, pam
+
+[domain/corp.azureuser.org]
+default_shell = /bin/bash
+krb5_store_password_if_offline = True
+cache_credentials = True
+krb5_realm = CORP.AZUREUSER.ORG
+realmd_tags = manages-system joined-with-adcli 
+id_provider = ad
+fallback_homedir = /home/%u@%d
+ad_domain = corp.azureuser.org
+use_fully_qualified_names = False
+ldap_id_mapping = True
+access_provider = ad
+ad_allow_groups = GG_Server_Admins@corp.azureuser.org

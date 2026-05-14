@@ -1,0 +1,12 @@
+all_access:
+  reserved: false
+  hidden: false
+  backend_roles:
+  - "admin"
+  - "GG_SIEM_Admins"
+  - "GG_Server_Admins"
+  - "GG_IT_Security"
+  hosts: []
+  users: []
+  and_backend_roles: []
+  description: "Maps AD Groups and admin to all_access"

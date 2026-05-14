@@ -1,0 +1,11 @@
+cat /var/ossec/etc/ossec.conf | grep -A10 -i slack
+  <name>slack</name>
+  <hook_url>https://hooks.slack.com/services/redacted</hook_url>
+  <level>10</level>
+  <alert_format>json</alert_format>
+</integration>
+
+  <alerts>
+    <log_alert_level>3</log_alert_level>
+    <email_alert_level>12</email_alert_level>
+  </alerts>

@@ -1,0 +1,23 @@
+root@pve1:~# qm config 100
+bios: ovmf
+boot: order=scsi0;net0;ide2
+cores: 2
+cpu: host
+efidisk0: local-lvm:vm-100-disk-2,efitype=4m,size=4M
+ide2: local:iso/netgate-installer-v1.1.1-RELEASE-amd64.iso,media=cdrom,size=998840K
+machine: q35
+memory: 3072
+meta: creation-qemu=10.1.2,ctime=1772033176
+name: PFSENSE-01
+net0: virtio=BC:24:11:66:FC:E4,bridge=vmbr0
+net1: virtio=BC:24:11:51:6C:99,bridge=vmbr1,tag=254
+net2: virtio=BC:24:11:5D:A5:D3,bridge=vmbr2,tag=253
+numa: 0
+onboot: 1
+ostype: l26
+scsi0: local-lvm:vm-100-disk-1,size=32G
+scsihw: virtio-scsi-single
+smbios1: uuid=cd6f74b2-d187-49e8-9128-c6adfc4b174a
+sockets: 1
+startup: order=1,up=20
+vmgenid: 29aa7b9a-5aa9-40d5-b805-f39e73784566

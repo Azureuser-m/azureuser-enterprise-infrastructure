@@ -1,0 +1,73 @@
+# /usr/local/etc/tac_plus-ng.cfg
+
+id = spawnd {
+  listen { port = 49 }
+}
+
+id = tac_plus-ng {
+    log authclog { destination = "/var/log/tac_plus/authc.log" } 
+    log authzlog { destination = "/var/log/tac_plus/authz.log" }
+    log acctlog  { destination = "/var/log/tac_plus/acct.log"  }      
+    authentication log = authclog 
+    authorization log = authzlog
+    accounting log = acctlog
+
+    mavis module = groups {
+    resolve gids = yes
+    resolve gids attribute = TACMEMBER
+    groups filter = /^(gg_network_admins|gg_network_readonly)$/
+  }
+  mavis module = external {
+    exec = /usr/local/sbin/pammavis "pammavis" "-s" "tacacs"
+  }
+
+  user backend = mavis
+  login backend = mavis
+  device global {
+    address = 0.0.0.0/0
+    key = "<redacted>"
+  }
+
+  group gg_network_admins
+  group gg_network_readonly
+
+  profile admin {
+    script {
+      if (service == shell) {
+        if (cmd == "") {
+          set priv-lvl = 15
+          permit
+        }
+        permit
+      }
+      permit
+    }
+  }
+
+  profile readonly {
+    script {
+      if (service == shell) {
+        set priv-lvl = 1
+        permit
+      }
+      deny
+    }
+  }
+
+  ruleset {
+    rule group_map {
+      enabled = yes
+      script {
+        if (group == gg_network_admins) {
+          profile = admin
+          permit
+        }
+        if (group == gg_network_readonly) {
+          profile = readonly
+          permit
+        }
+        permit
+      }
+    }
+  }
+}

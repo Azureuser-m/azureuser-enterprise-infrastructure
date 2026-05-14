@@ -1,0 +1,2 @@
+default via 10.10.50.1 dev vmbr1.50 proto kernel onlink 
+10.10.50.0/24 dev vmbr1.50 proto kernel scope link src 10.10.50.5 

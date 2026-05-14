@@ -1,0 +1,31 @@
+SW2#show int status
+
+Port      Name               Status       Vlan       Duplex  Speed Type
+Fa0/1     INTERFACE CONNECTE notconnect   trunk        auto   auto 10/100BaseTX
+Fa0/2     INTERFACE CONNECTE notconnect   trunk        auto   auto 10/100BaseTX
+Fa0/3     out-of-band mgmt   connected    50         a-full  a-100 10/100BaseTX
+Fa0/4     UNUSED INTERFACES, disabled     998          auto   auto 10/100BaseTX
+Fa0/5     AP-2 GUEST         disabled     30           auto   auto 10/100BaseTX
+Fa0/6                        connected    trunk      a-full  a-100 10/100BaseTX
+Fa0/7                        connected    trunk      a-full  a-100 10/100BaseTX
+Fa0/8                        connected    trunk      a-full  a-100 10/100BaseTX
+Fa0/9                        connected    trunk      a-full  a-100 10/100BaseTX
+Fa0/10                       connected    trunk      a-full  a-100 10/100BaseTX
+Fa0/11                       connected    trunk      a-full  a-100 10/100BaseTX
+Fa0/12                       connected    trunk      a-full  a-100 10/100BaseTX
+Fa0/13                       connected    trunk      a-full  a-100 10/100BaseTX
+Fa0/14                       notconnect   trunk      a-full  a-100 10/100BaseTX
+Fa0/15                       notconnect   trunk      a-full  a-100 10/100BaseTX
+Fa0/16                       notconnect   trunk      a-full  a-100 10/100BaseTX
+Fa0/17                       notconnect   trunk      a-full  a-100 10/100BaseTX
+Fa0/18                       notconnect   trunk      a-full  a-100 10/100BaseTX
+Fa0/19                       notconnect   trunk      a-full  a-100 10/100BaseTX
+Fa0/20                       notconnect   trunk      a-full  a-100 10/100BaseTX
+Fa0/21                       notconnect   trunk      a-full  a-100 10/100BaseTX
+Fa0/22    UNUSED INTERFACES, disabled     998          auto   auto 10/100BaseTX
+Fa0/23    UNUSED INTERFACES, disabled     998          auto   auto 10/100BaseTX
+Fa0/24    UNUSED INTERFACES, disabled     998          auto   auto 10/100BaseTX
+Gi0/1     INTERFACE CONNECTE connected    trunk      a-full a-1000 10/100/1000BaseTX
+Gi0/2     RESERVED - FUTURE  disabled     trunk        auto   auto 10/100/1000BaseTX
+Po1       INTERFACE CONNECTE connected    trunk      a-full  a-100
+SW2#

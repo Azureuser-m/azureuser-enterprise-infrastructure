@@ -1,0 +1,37 @@
+<!-- Local Decoders -->
+
+<!-- Modify it at your will. -->
+<!-- Copyright (C) 2015, Wazuh Inc. -->
+
+<!--
+  - Allowed static fields:
+  - location   - where the log came from (only on FTS)
+  - srcuser    - extracts the source username
+  - dstuser    - extracts the destination (target) username
+  - user       - an alias to dstuser (only one of the two can be used)
+  - srcip      - source ip
+  - dstip      - dst ip
+  - srcport    - source port
+  - dstport    - destination port
+  - protocol   - protocol
+  - id         - event id
+  - url        - url of the event
+  - action     - event action (deny, drop, accept, etc)
+  - status     - event status (success, failure, etc)
+  - extra_data - Any extra data
+-->
+
+<decoder name="local_decoder_example">
+    <program_name>local_decoder_example</program_name>
+</decoder>
+
+<decoder name="pfsense-rfc5424-filterlog">
+  <prematch type="pcre2">^\d+\s+\d{4}-\d{2}-\d{2}T\S+\s+\S+\s+filterlog\s+\d+\s+-\s+-\s+\d+,,,\d+,</prematch>
+</decoder>
+
+<decoder name="pfsense-rfc5424-filterlog-fields">
+  <parent>pfsense-rfc5424-filterlog</parent>
+  <use_own_name>true</use_own_name>
+  <regex type="pcre2">^\d+\s+\S+\s+\S+\s+filterlog\s+\d+\s+-\s+-\s+\d+,,,(\d+),([^,]+),([^,]+),([^,]+),(in|out),\d+,[^,]*,[^,]*,\d+,\d+,\d+,([^,]*),\d+,([^,]+),(\d+),([^,]+),([^,]+),(\d+),(\d+),\d+$</regex>
+  <order>tracker,interface,reason,action,direction,flags,protocol,packet_length,srcip,dstip,srcport,dstport</order>
+</decoder>

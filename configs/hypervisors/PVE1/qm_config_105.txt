@@ -1,0 +1,19 @@
+root@pve1:~# qm config 105
+agent: 1
+boot: order=ide2;scsi0;net0
+cores: 2
+cpu: host
+ide2: none,media=cdrom
+machine: q35
+memory: 3072
+meta: creation-qemu=10.1.2,ctime=1772477891
+name: ZBX01
+net0: virtio=BC:24:11:C5:38:8D,bridge=vmbr1,tag=10
+numa: 0
+ostype: l26
+scsi0: vm-storage2:vm-105-disk-0,iothread=1,size=32G
+scsi1: ssd-lvmthin-32gb:vm-105-disk-1,cache=writeback,iothread=1,size=20G
+scsihw: virtio-scsi-single
+smbios1: uuid=db1622c9-c354-40aa-b89b-ded8652539ee
+sockets: 1
+vmgenid: 427e4caa-ce7a-4ac6-b9b8-ad5cff469583

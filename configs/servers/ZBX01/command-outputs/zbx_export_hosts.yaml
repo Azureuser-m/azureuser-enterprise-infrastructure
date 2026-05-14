@@ -1,0 +1,275 @@
+zabbix_export:
+  version: '7.4'
+  host_groups:
+    - uuid: adc9a6f8c8ae41cd92d45c10ccfb2305
+      name: 'Core Cisco Routers'
+    - uuid: f2481361f99448eea617b7b1d4765566
+      name: 'Discovered hosts'
+    - uuid: 1b837a3c078647049a0c00c61b4d57b5
+      name: Hypervisors
+    - uuid: dc579cd7a1a34222933f24f52a68bcd8
+      name: 'Linux servers'
+    - uuid: 0515d0b374e146ea99c186a378cbc80d
+      name: Switches
+    - uuid: 137f19e6e2dc4219b33553b812627bc2
+      name: 'Virtual machines'
+    - uuid: d043ba70c6d8402a928017eeed43d14a
+      name: 'Windows servers'
+    - uuid: af9a375a689d4eaf9631aee00a1d3627
+      name: 'Windows workstations'
+    - uuid: 6f6799aa69e844b4b3918f779f2abf08
+      name: 'Zabbix servers'
+  hosts:
+    - host: ADM01
+      name: ADM01
+      description: 'Admin PC'
+      templates:
+        - name: 'Windows by Zabbix agent active'
+      groups:
+        - name: 'Virtual machines'
+      interfaces:
+        - ip: 10.10.50.70
+          interface_ref: if1
+      tags:
+        - tag: Environment
+          value: Admin
+      inventory_mode: AUTOMATIC
+      inventory:
+        name: ADM01
+        os: 'Windows 10 Pro 26100.1.amd64fre.ge_release.240331-1435 Build 26200.8037'
+    - host: ADM02
+      name: ADM02
+      templates:
+        - name: 'Windows by Zabbix agent active'
+      groups:
+        - name: 'Discovered hosts'
+        - name: 'Virtual machines'
+        - name: 'Windows workstations'
+      interfaces:
+        - ip: 10.10.20.11
+          interface_ref: if1
+      tags:
+        - tag: Windows
+          value: Workstation
+    - host: CLT01-TEMP
+      name: CLT01-TEMP
+      templates:
+        - name: 'Windows by Zabbix agent active'
+      groups:
+        - name: 'Discovered hosts'
+        - name: 'Virtual machines'
+        - name: 'Windows workstations'
+      interfaces:
+        - ip: 10.10.20.10
+          interface_ref: if1
+      tags:
+        - tag: Windows
+          value: Workstation
+    - host: DC01
+      name: DC01
+      description: 'Domain Controller'
+      templates:
+        - name: 'Windows by Zabbix agent active'
+      groups:
+        - name: 'Virtual machines'
+      interfaces:
+        - ip: 10.10.10.10
+          interface_ref: if1
+      tags:
+        - tag: Server
+          value: Windows
+      inventory_mode: AUTOMATIC
+      inventory:
+        name: DC01
+        os: 'Windows Server 2025 Standard Evaluation 26100.1.amd64fre.ge_release.240331-1435 Build 26100.32522'
+    - host: DC02
+      name: DC02
+      templates:
+        - name: 'Windows by Zabbix agent active'
+      groups:
+        - name: 'Discovered hosts'
+        - name: 'Virtual machines'
+        - name: 'Windows servers'
+      interfaces:
+        - ip: 10.10.10.11
+          interface_ref: if1
+    - host: NEXUS01
+      name: NEXUS01
+      templates:
+        - name: 'Linux by Zabbix agent active'
+      groups:
+        - name: 'Discovered hosts'
+        - name: 'Linux servers'
+      interfaces:
+        - ip: 10.10.10.70
+          interface_ref: if1
+    - host: PFS01
+      name: PFS01
+      templates:
+        - name: 'FreeBSD by Zabbix agent'
+      groups:
+        - name: 'Discovered hosts'
+      interfaces:
+        - ip: 10.10.254.4
+          interface_ref: if1
+      tags:
+        - tag: Firewall
+          value: PfSense-01
+      inventory_mode: AUTOMATIC
+      inventory:
+        name: pfSense-01.corp.azureuser.org
+        os: 'FreeBSD pfSense-01.corp.azureuser.org 15.0-CURRENT FreeBSD 15.0-CURRENT #21 RELENG_2_8_1-n256095-47c932dcc0e9: Thu Aug 28 16:27:'
+    - host: PFS02
+      name: PFS02
+      groups:
+        - name: 'Discovered hosts'
+      interfaces:
+        - ip: 10.10.254.6
+          interface_ref: if1
+      tags:
+        - tag: Firewall
+          value: PfSense-02
+      inventory_mode: AUTOMATIC
+    - host: PVE1
+      name: PVE1
+      templates:
+        - name: 'Linux by Zabbix agent active'
+      groups:
+        - name: Hypervisors
+      interfaces:
+        - ip: 10.10.50.5
+          interface_ref: if1
+      inventory_mode: AUTOMATIC
+      inventory:
+        name: pve1
+        os: 'Linux version 6.17.13-1-pve (build@proxmox) (gcc (Debian 14.2.0-19) 14.2.0, GNU ld (GNU Binutils for Debian) 2.44) #1 SMP PREEMP'
+    - host: PVE2
+      name: PVE2
+      templates:
+        - name: 'Linux by Zabbix agent active'
+      groups:
+        - name: 'Discovered hosts'
+        - name: 'Linux servers'
+      interfaces:
+        - ip: 10.10.50.6
+          interface_ref: if1
+    - host: R1-CORE
+      name: R1-CORE
+      description: R1-CORE
+      templates:
+        - name: 'Cisco IOS by SNMP'
+      groups:
+        - name: 'Core Cisco Routers'
+      interfaces:
+        - type: SNMP
+          ip: 10.10.10.2
+          port: '161'
+          details:
+            version: SNMPV3
+            securityname: <Redacted>
+            securitylevel: AUTHPRIV
+            authpassphrase: <Redacted>
+            privprotocol: AES128
+            privpassphrase: <Redacted>
+          interface_ref: if1
+      inventory_mode: AUTOMATIC
+      inventory:
+        name: R1-CORE.corp.azureuser.org
+        os: 15.4(3)M3
+        serialno_a: redacted
+        model: CISCO2901/K9
+    - host: R2-CORE
+      name: R2-CORE
+      description: 'R2-CORE ROUTER'
+      templates:
+        - name: 'Cisco IOS by SNMP'
+      groups:
+        - name: 'Core Cisco Routers'
+      interfaces:
+        - type: SNMP
+          ip: 10.10.10.3
+          port: '161'
+          details:
+            version: SNMPV3
+            securityname: <Redacted>
+            securitylevel: AUTHPRIV
+            authpassphrase: <Redacted>
+            privprotocol: AES128
+            privpassphrase: <Redacted>
+          interface_ref: if1
+    - host: SW1
+      name: SW1
+      templates:
+        - name: 'Cisco IOS by SNMP'
+      groups:
+        - name: 'Discovered hosts'
+        - name: Switches
+      interfaces:
+        - type: SNMP
+          ip: 10.10.50.9
+          port: '161'
+          details:
+            version: SNMPV3
+            securityname: <Redacted>
+            securitylevel: AUTHPRIV
+            authpassphrase: <Redacted>
+            privprotocol: AES128
+            privpassphrase: <Redacted>
+          interface_ref: if1
+      tags:
+        - tag: Network
+          value: Switch
+      inventory_mode: AUTOMATIC
+      inventory:
+        name: SW1.corp.azureuser.org
+        os: 15.0(2)SE10a
+    - host: SW2
+      name: SW2
+      templates:
+        - name: 'Cisco IOS by SNMP'
+      groups:
+        - name: 'Discovered hosts'
+        - name: Switches
+      interfaces:
+        - type: SNMP
+          ip: 10.10.50.10
+          port: '161'
+          details:
+            version: SNMPV3
+            securityname: <Redacted>
+            securitylevel: AUTHPRIV
+            authpassphrase: <Redacted>
+            privprotocol: AES128
+            privpassphrase: <Redacted>
+          interface_ref: if1
+      tags:
+        - tag: Nework
+          value: Switch
+      inventory_mode: AUTOMATIC
+      inventory:
+        name: SW2.corp.azureuser.org
+        os: 15.0(2)SE10a
+    - host: WAZ01
+      name: WAZ01
+      templates:
+        - name: 'Linux by Zabbix agent active'
+      groups:
+        - name: 'Linux servers'
+      interfaces:
+        - ip: 10.10.10.50
+          interface_ref: if1
+    - host: ZBX01
+      name: 'Zabbix Server 01'
+      templates:
+        - name: 'Linux by Zabbix agent'
+        - name: 'Zabbix server health'
+      groups:
+        - name: 'Zabbix servers'
+      interfaces:
+        - interface_ref: if1
+      inventory_mode: AUTOMATIC
+      inventory:
+        name: zbx01
+        os: 'Linux version 6.8.0-107-generic (buildd@lcy02-amd64-059) (x86_64-linux-gnu-gcc-13 (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0, GNU l'
+        location_lat: '56.97612'
+        location_lon: '24.16553'

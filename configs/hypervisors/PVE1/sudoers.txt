@@ -1,0 +1,2 @@
+root@pve1:~# cat /etc/sudoers.d/pve-sudoers 
+azuremaster@corp.azureuser.org ALL=(ALL:ALL) ALL

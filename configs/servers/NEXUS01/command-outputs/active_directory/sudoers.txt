@@ -1,0 +1,4 @@
+[azuremaster@nexus ~]$ sudo cat /etc/sudoers | grep azuremaster
+##Allow azuremaster to run all commands
+azuremaster@corp.azureuser.org ALL=(ALL) ALL
+[azuremaster@nexus ~]$ 

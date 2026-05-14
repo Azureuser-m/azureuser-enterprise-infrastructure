@@ -1,0 +1,6 @@
+Name                    Type     Status     Total (KiB)      Used (KiB) Available (KiB)        %
+local                    dir     active        98497780        48833840        44614392   49.58%
+local-lvm            lvmthin     active       832921600       120773632       712147968   14.50%
+ssd-lvmthin-32gb     lvmthin     active        31199232        14601240        16597991   46.80%
+vg_ssd                   lvm     active        31264768        31264768               0  100.00%
+vm-storage2              lvm     active       976760832       234889216       741871616   24.05%

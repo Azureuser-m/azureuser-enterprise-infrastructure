@@ -1,0 +1,225 @@
+SW2#show cdp neighbors detail
+-------------------------
+Device ID: SW1.corp.azureuser.org
+Entry address(es):
+  IP address: 10.10.50.9
+Platform: cisco WS-C2960-24TT-L,  Capabilities: Switch IGMP
+Interface: FastEthernet0/11,  Port ID (outgoing port): FastEthernet0/11
+Holdtime : 128 sec
+
+Version :
+Cisco IOS Software, C2960 Software (C2960-LANBASEK9-M), Version 15.0(2)SE10a, RELEASE SOFTWARE (fc3)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2016 by Cisco Systems, Inc.
+Compiled Thu 03-Nov-16 14:21 by prod_rel_team
+
+advertisement version: 2
+Protocol Hello:  OUI=0x00000C, Protocol ID=0x0112; payload len=27, value=00000000FFFFFFFF010225010000000000006CFA8943A400FF0000
+VTP Management Domain: ''
+Native VLAN: 999
+Duplex: full
+Power Available TLV:
+
+    Power request id: 0, Power management id: 1, Power available: 0, Power management level: -1
+Management address(es):
+  IP address: 10.10.50.9
+
+-------------------------
+Device ID: SW1.corp.azureuser.org
+Entry address(es):
+  IP address: 10.10.50.9
+Platform: cisco WS-C2960-24TT-L,  Capabilities: Switch IGMP
+Interface: FastEthernet0/10,  Port ID (outgoing port): FastEthernet0/10
+Holdtime : 127 sec
+
+Version :
+Cisco IOS Software, C2960 Software (C2960-LANBASEK9-M), Version 15.0(2)SE10a, RELEASE SOFTWARE (fc3)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2016 by Cisco Systems, Inc.
+Compiled Thu 03-Nov-16 14:21 by prod_rel_team
+
+advertisement version: 2
+Protocol Hello:  OUI=0x00000C, Protocol ID=0x0112; payload len=27, value=00000000FFFFFFFF010225010000000000006CFA8943A400FF0000
+VTP Management Domain: ''
+Native VLAN: 999
+Duplex: full
+Power Available TLV:
+
+    Power request id: 0, Power management id: 1, Power available: 0, Power management level: -1
+Management address(es):
+  IP address: 10.10.50.9
+
+-------------------------
+Device ID: SW1.corp.azureuser.org
+Entry address(es):
+  IP address: 10.10.50.9
+Platform: cisco WS-C2960-24TT-L,  Capabilities: Switch IGMP
+Interface: FastEthernet0/12,  Port ID (outgoing port): FastEthernet0/12
+Holdtime : 124 sec
+
+Version :
+Cisco IOS Software, C2960 Software (C2960-LANBASEK9-M), Version 15.0(2)SE10a, RELEASE SOFTWARE (fc3)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2016 by Cisco Systems, Inc.
+Compiled Thu 03-Nov-16 14:21 by prod_rel_team
+
+advertisement version: 2
+Protocol Hello:  OUI=0x00000C, Protocol ID=0x0112; payload len=27, value=00000000FFFFFFFF010225010000000000006CFA8943A400FF0000
+VTP Management Domain: ''
+Native VLAN: 999
+Duplex: full
+Power Available TLV:
+
+    Power request id: 0, Power management id: 1, Power available: 0, Power management level: -1
+Management address(es):
+  IP address: 10.10.50.9
+
+-------------------------
+Device ID: SW1.corp.azureuser.org
+Entry address(es):
+  IP address: 10.10.50.9
+Platform: cisco WS-C2960-24TT-L,  Capabilities: Switch IGMP
+Interface: FastEthernet0/7,  Port ID (outgoing port): FastEthernet0/7
+Holdtime : 124 sec
+
+Version :
+Cisco IOS Software, C2960 Software (C2960-LANBASEK9-M), Version 15.0(2)SE10a, RELEASE SOFTWARE (fc3)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2016 by Cisco Systems, Inc.
+Compiled Thu 03-Nov-16 14:21 by prod_rel_team
+
+advertisement version: 2
+Protocol Hello:  OUI=0x00000C, Protocol ID=0x0112; payload len=27, value=00000000FFFFFFFF010225010000000000006CFA8943A400FF0000
+VTP Management Domain: ''
+Native VLAN: 999
+Duplex: full
+Power Available TLV:
+
+    Power request id: 0, Power management id: 1, Power available: 0, Power management level: -1
+Management address(es):
+  IP address: 10.10.50.9
+
+-------------------------
+Device ID: SW1.corp.azureuser.org
+Entry address(es):
+  IP address: 10.10.50.9
+Platform: cisco WS-C2960-24TT-L,  Capabilities: Switch IGMP
+Interface: FastEthernet0/9,  Port ID (outgoing port): FastEthernet0/9
+Holdtime : 123 sec
+
+Version :
+Cisco IOS Software, C2960 Software (C2960-LANBASEK9-M), Version 15.0(2)SE10a, RELEASE SOFTWARE (fc3)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2016 by Cisco Systems, Inc.
+Compiled Thu 03-Nov-16 14:21 by prod_rel_team
+
+advertisement version: 2
+Protocol Hello:  OUI=0x00000C, Protocol ID=0x0112; payload len=27, value=00000000FFFFFFFF010225010000000000006CFA8943A400FF0000
+VTP Management Domain: ''
+Native VLAN: 999
+Duplex: full
+Power Available TLV:
+
+    Power request id: 0, Power management id: 1, Power available: 0, Power management level: -1
+Management address(es):
+  IP address: 10.10.50.9
+
+-------------------------
+Device ID: SW1.corp.azureuser.org
+Entry address(es):
+  IP address: 10.10.50.9
+Platform: cisco WS-C2960-24TT-L,  Capabilities: Switch IGMP
+Interface: FastEthernet0/6,  Port ID (outgoing port): FastEthernet0/6
+Holdtime : 123 sec
+
+Version :
+Cisco IOS Software, C2960 Software (C2960-LANBASEK9-M), Version 15.0(2)SE10a, RELEASE SOFTWARE (fc3)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2016 by Cisco Systems, Inc.
+Compiled Thu 03-Nov-16 14:21 by prod_rel_team
+
+advertisement version: 2
+Protocol Hello:  OUI=0x00000C, Protocol ID=0x0112; payload len=27, value=00000000FFFFFFFF010225010000000000006CFA8943A400FF0000
+VTP Management Domain: ''
+Native VLAN: 999
+Duplex: full
+Power Available TLV:
+
+    Power request id: 0, Power management id: 1, Power available: 0, Power management level: -1
+Management address(es):
+  IP address: 10.10.50.9
+
+-------------------------
+Device ID: SW1.corp.azureuser.org
+Entry address(es):
+  IP address: 10.10.50.9
+Platform: cisco WS-C2960-24TT-L,  Capabilities: Switch IGMP
+Interface: FastEthernet0/13,  Port ID (outgoing port): FastEthernet0/13
+Holdtime : 123 sec
+
+Version :
+Cisco IOS Software, C2960 Software (C2960-LANBASEK9-M), Version 15.0(2)SE10a, RELEASE SOFTWARE (fc3)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2016 by Cisco Systems, Inc.
+Compiled Thu 03-Nov-16 14:21 by prod_rel_team
+
+advertisement version: 2
+Protocol Hello:  OUI=0x00000C, Protocol ID=0x0112; payload len=27, value=00000000FFFFFFFF010225010000000000006CFA8943A400FF0000
+VTP Management Domain: ''
+Native VLAN: 999
+Duplex: full
+Power Available TLV:
+
+    Power request id: 0, Power management id: 1, Power available: 0, Power management level: -1
+Management address(es):
+  IP address: 10.10.50.9
+
+-------------------------
+Device ID: SW1.corp.azureuser.org
+Entry address(es):
+  IP address: 10.10.50.9
+Platform: cisco WS-C2960-24TT-L,  Capabilities: Switch IGMP
+Interface: FastEthernet0/8,  Port ID (outgoing port): FastEthernet0/8
+Holdtime : 123 sec
+
+Version :
+Cisco IOS Software, C2960 Software (C2960-LANBASEK9-M), Version 15.0(2)SE10a, RELEASE SOFTWARE (fc3)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2016 by Cisco Systems, Inc.
+Compiled Thu 03-Nov-16 14:21 by prod_rel_team
+
+advertisement version: 2
+Protocol Hello:  OUI=0x00000C, Protocol ID=0x0112; payload len=27, value=00000000FFFFFFFF010225010000000000006CFA8943A400FF0000
+VTP Management Domain: ''
+Native VLAN: 999
+Duplex: full
+Power Available TLV:
+
+    Power request id: 0, Power management id: 1, Power available: 0, Power management level: -1
+Management address(es):
+  IP address: 10.10.50.9
+
+-------------------------
+Device ID: R2-CORE.corp.azureuser.org
+Entry address(es):
+  IP address: 10.10.10.3
+Platform: cisco ISR4321/K9,  Capabilities: Router Switch IGMP
+Interface: GigabitEthernet0/1,  Port ID (outgoing port): GigabitEthernet0/0/1
+Holdtime : 172 sec
+
+Version :
+Cisco IOS Software [Everest], ISR Software (X86_64_LINUX_IOSD-UNIVERSALK9-M), Version 16.6.3, RELEASE SOFTWARE (fc8)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2018 by Cisco Systems, Inc.
+Compiled Wed 28-Feb-18 23:54 by mcpre
+
+advertisement version: 2
+VTP Management Domain: ''
+Duplex: full
+Power Available TLV:
+
+    Power request id: 0, Power management id: 0, Power available: 0, Power management level: 0
+Management address(es):
+  IP address: 10.10.10.3
+
+SW2#

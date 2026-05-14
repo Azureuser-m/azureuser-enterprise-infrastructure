@@ -1,0 +1,2 @@
+video sysadmin01 shows sysadmin has no cli access to terminal, has sysadmin audit role of the node
+gg_it_security has audit role only on both pve, has access from root directory, cant' console and others

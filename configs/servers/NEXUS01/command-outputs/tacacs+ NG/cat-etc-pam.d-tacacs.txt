@@ -1,0 +1,6 @@
+[root@nexus ~]# cat /etc/pam.d/tacacs
+auth      required   pam_sss.so
+account   required   pam_succeed_if.so quiet user ingroup GG_Network_Admins:GG_Network_readonly
+session   optional   pam_permit.so
+password  required   pam_deny.so
+[root@nexus ~]# 

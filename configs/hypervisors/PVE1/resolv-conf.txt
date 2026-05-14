@@ -1,0 +1,5 @@
+root@pve1:~# cat /etc/resolv.conf
+search corp.azureuser.org
+nameserver 10.10.10.10
+nameserver 10.128.100.12
+nameserver 10.128.100.11

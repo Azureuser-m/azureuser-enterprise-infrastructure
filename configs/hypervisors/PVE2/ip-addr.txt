@@ -1,0 +1,10 @@
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+enp1s0           UP             
+nic1             UP             
+nic0             UP             
+vmbr0            UP             fe80::76d0:2bff:fe26:fd13/64 
+vmbr1            UP             fe80::21b:21ff:fe6a:b063/64 
+vmbr1.50@vmbr1   UP             10.10.50.6/24 fe80::21b:21ff:fe6a:b063/64 
+vmbr2            UP             fe80::21b:21ff:fe6a:b0bd/64 
+tap101i0         UNKNOWN        
+tap102i0         UNKNOWN        

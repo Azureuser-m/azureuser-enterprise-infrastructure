@@ -1,0 +1,6 @@
+      VMID NAME                 STATUS     MEM(MB)    BOOTDISK(GB) PID       
+       100 PFS02                stopped    4064              32.00 0         
+       101 DC02                 running    6000             256.00 1882      
+       102 WAZ01                running    4096              64.00 2382      
+       103 BKU01                stopped    8448             300.00 0         
+       104 CLT01                stopped    4096              76.00 0         

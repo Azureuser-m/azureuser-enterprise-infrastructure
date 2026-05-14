@@ -1,0 +1,13 @@
+R1-CORE#show ip sla statistics 254
+IPSLAs Latest Operation Statistics
+
+IPSLA operation id: 254
+        Latest RTT: 1 milliseconds
+Latest operation start time: 03:10:37 UTC Fri May 8 2026
+Latest operation return code: OK
+Number of successes: 323
+Number of failures: 0
+Operation time to live: Forever
+
+
+R1-CORE#

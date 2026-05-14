@@ -1,0 +1,22 @@
+SW1#show vlan brief
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Fa0/2, Fa0/14, Fa0/15
+                                                Fa0/16, Fa0/17, Fa0/18
+                                                Fa0/19, Fa0/20, Fa0/21
+                                                Gi0/2
+10   SERVERS                          active
+20   CORP                             active
+30   GUEST                            active    Fa0/5
+50   MGMT                             active    Fa0/3
+254  PFSENSE_TRANSIT                  active
+998  BLACKHOLE                        active    Fa0/22, Fa0/23, Fa0/24
+999  NATIVE                           active
+1002 fddi-default                     act/unsup
+1003 token-ring-default               act/unsup
+1004 fddinet-default                  act/unsup
+1005 trnet-default                    act/unsup
+SW1#
+
+NOTE: PORTS IN VLAN 1 are there because they are not plugged in yet, f0/2 is a trunk link for pve2, f0/14 -21 is lacp standby and g0/2 is reserved trunk link for r2 core

@@ -1,0 +1,156 @@
+{
+   "name": "High alert burst by agent",
+   "type": "monitor",
+   "monitor_type": "bucket_level_monitor",
+   "enabled": true,
+   "schedule": {
+      "period": {
+         "unit": "MINUTES",
+         "interval": 1
+      }
+   },
+   "inputs": [
+      {
+         "search": {
+            "indices": [
+               "wazuh-alerts-4.x-2026.03.07"
+            ],
+            "query": {
+               "size": 0,
+               "aggregations": {
+                  "composite_agg": {
+                     "composite": {
+                        "sources": [
+                           {
+                              "agent.name": {
+                                 "terms": {
+                                    "field": "agent.name"
+                                 }
+                              }
+                           }
+                        ]
+                     },
+                     "aggs": {}
+                  }
+               },
+               "query": {
+                  "bool": {
+                     "filter": [
+                        {
+                           "range": {
+                              "timestamp": {
+                                 "gte": "{{period_end}}||-5m",
+                                 "lte": "{{period_end}}",
+                                 "format": "epoch_millis"
+                              }
+                           }
+                        },
+                        {
+                           "range": {
+                              "rule.level": {
+                                 "gte": 10
+                              }
+                           }
+                        }
+                     ]
+                  }
+               }
+            }
+         }
+      }
+   ],
+   "triggers": [
+      {
+         "bucket_level_trigger": {
+            "id": "2phMx5wB1DranRhFguh9",
+            "name": "Agent high-alert burst",
+            "severity": "1",
+            "condition": {
+               "buckets_path": {
+                  "_count": "_count"
+               },
+               "parent_bucket_path": "composite_agg",
+               "script": {
+                  "source": "params._count > 5",
+                  "lang": "painless"
+               },
+               "gap_policy": "skip"
+            },
+            "actions": [
+               {
+                  "id": "notification158433",
+                  "name": "Agent high-alert burst",
+                  "destination_id": "1ZhMx5wB1DranRhFK-gJ",
+                  "message_template": {
+                     "source": "Monitor {{ctx.monitor.name}} just entered alert status. Please investigate the issue.\n  - Trigger: {{ctx.trigger.name}}\n  - Severity: {{ctx.trigger.severity}}\n  - Period start: {{ctx.periodStart}} UTC\n  - Period end: {{ctx.periodEnd}} UTC\n\n  - Deduped Alerts:\n  {{#ctx.dedupedAlerts}}\n    * {{id}} : {{bucket_keys}}\n  {{/ctx.dedupedAlerts}}\n\n  - New Alerts:\n  {{#ctx.newAlerts}}\n    * {{id}} : {{bucket_keys}}\n  {{/ctx.newAlerts}}\n\n  - Completed Alerts:\n  {{#ctx.completedAlerts}}\n    * {{id}} : {{bucket_keys}}\n  {{/ctx.completedAlerts}}",
+                     "lang": "mustache"
+                  },
+                  "throttle_enabled": false,
+                  "subject_template": {
+                     "source": "Alerting Notification action",
+                     "lang": "mustache"
+                  },
+                  "action_execution_policy": {
+                     "action_execution_scope": {
+                        "per_alert": {
+                           "actionable_alerts": [
+                              "DEDUPED",
+                              "NEW"
+                           ]
+                        }
+                     }
+                  }
+               }
+            ]
+         }
+      }
+   ],
+   "ui_metadata": {
+      "schedule": {
+         "timezone": null,
+         "frequency": "interval",
+         "period": {
+            "unit": "MINUTES",
+            "interval": 1
+         },
+         "daily": 0,
+         "weekly": {
+            "tue": false,
+            "wed": false,
+            "thur": false,
+            "sat": false,
+            "fri": false,
+            "mon": false,
+            "sun": false
+         },
+         "monthly": {
+            "type": "day",
+            "day": 1
+         },
+         "cronExpression": "0 */1 * * *"
+      },
+      "monitor_type": "bucket_level_monitor",
+      "search": {
+         "searchType": "graph",
+         "timeField": "timestamp",
+         "aggregations": [],
+         "groupBy": [
+            "agent.name"
+         ],
+         "bucketValue": 5,
+         "bucketUnitOfTime": "m",
+         "filters": [
+            {
+               "fieldName": [
+                  {
+                     "label": "rule.level",
+                     "type": "number"
+                  }
+               ],
+               "fieldValue": 10,
+               "operator": "is_greater_equal"
+            }
+         ]
+      }
+   }
+}

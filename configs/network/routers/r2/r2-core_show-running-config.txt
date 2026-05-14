@@ -1,0 +1,319 @@
+R2-CORE#show run
+Building configuration...
+
+
+Current configuration : 6329 bytes
+!
+! Last configuration change at 06:23:51 UTC Sat May 9 2026 by redacted-admin
+! NVRAM config last updated at 06:23:55 UTC Sat May 9 2026 by redacted-admin
+!
+version 16.6
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+service sequence-numbers
+platform qfp utilization monitor load 80
+no platform punt-keepalive disable-kernel-core
+!
+hostname R2-CORE
+!
+boot-start-marker
+boot-end-marker
+!
+!
+vrf definition Mgmt-intf
+ !
+ address-family ipv4
+ exit-address-family
+ !
+ address-family ipv6
+ exit-address-family
+!
+enable secret 5 redacted
+!
+aaa new-model
+!
+!
+aaa group server tacacs+ TACACS-GRP
+ server name NEXUS01
+!
+aaa authentication login default group TACACS-GRP local
+aaa authentication enable default group TACACS-GRP enable
+aaa authorization exec default group TACACS-GRP local
+aaa accounting exec default start-stop group TACACS-GRP
+aaa accounting commands 1 default stop-only group TACACS-GRP
+aaa accounting commands 15 default stop-only group TACACS-GRP
+!
+!
+!
+!
+!
+!
+aaa session-id common
+!
+ip name-server 10.10.10.10
+no ip domain lookup
+ip domain name corp.azureuser.org
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+!
+!
+!
+!
+!
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+voice-card 0/2
+ no watchdog
+!
+license udi pid ISR4321/K9 sn redacted
+license boot suite AdvUCSuiteK9
+license boot level securityk9
+diagnostic bootup level minimal
+spanning-tree extend system-id
+!
+!
+!
+username redacted-admin secret 5 redacted
+!
+redundancy
+ mode none
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0/0
+ no ip address
+ shutdown
+ negotiation auto
+!
+interface GigabitEthernet0/0/1
+ no ip address
+ negotiation auto
+!
+interface GigabitEthernet0/0/1.10
+ description VLAN 10 (SERVERS) SUBINT
+ encapsulation dot1Q 10
+ ip address 10.10.10.3 255.255.255.0
+ standby 10 ip 10.10.10.1
+ standby 10 priority 105
+ standby 10 preempt
+!
+interface GigabitEthernet0/0/1.20
+ description VLAN 20 (CORP) SUBINT
+ encapsulation dot1Q 20
+ ip address 10.10.20.3 255.255.255.0
+ ip helper-address 10.10.10.10
+ ip helper-address 10.10.10.11
+ ip access-group CORP-ACL in
+ standby 20 ip 10.10.20.1
+ standby 20 priority 105
+ standby 20 preempt
+!
+interface GigabitEthernet0/0/1.30
+ description VLAN 30 (GUEST) SUBINT
+ encapsulation dot1Q 30
+ ip address 10.10.30.3 255.255.255.0
+ ip helper-address 10.10.10.10
+ ip helper-address 10.10.10.11
+ ip access-group GUEST-ACL in
+ standby 30 ip 10.10.30.1
+ standby 30 priority 105
+ standby 30 preempt
+!
+interface GigabitEthernet0/0/1.50
+ description VLAN 50 (MGMT) SUBINT
+ encapsulation dot1Q 50
+ ip address 10.10.50.3 255.255.255.0
+ standby 50 ip 10.10.50.1
+ standby 50 priority 105
+ standby 50 preempt
+!
+interface GigabitEthernet0/0/1.254
+ description VLAN 254 (TRANSIT TO PFSENSE LAN) SUBINT
+ encapsulation dot1Q 254
+ ip address 10.10.254.3 255.255.255.248
+ standby 254 ip 10.10.254.1
+ standby 254 priority 105
+ standby 254 preempt
+!
+interface GigabitEthernet0/0/1.999
+ encapsulation dot1Q 999 native
+ shutdown
+!
+interface Serial0/1/0
+ no ip address
+ shutdown
+!
+interface Serial0/1/1
+ no ip address
+ shutdown
+!
+interface Service-Engine0/2/0
+ no ip address
+ shutdown
+!
+interface GigabitEthernet0
+ vrf forwarding Mgmt-intf
+ no ip address
+ shutdown
+ negotiation auto
+!
+ip forward-protocol nd
+no ip http server
+ip http authentication local
+no ip http secure-server
+ip tftp source-interface GigabitEthernet0
+ip route 0.0.0.0 0.0.0.0 10.10.254.4
+!
+ip ssh version 2
+!
+!
+ip access-list standard VTY-ACL
+ permit 10.10.50.0 0.0.0.255
+ deny   any
+!
+ip access-list extended CORP-ACL
+ remark Allow initial DHCP client requests before VLAN20 address is assigned
+ permit udp any eq bootpc any eq bootps
+ remark Block CORP VLAN20 SSH access to SERVER VLAN10
+ deny   tcp 10.10.20.0 0.0.0.255 10.10.10.0 0.0.0.255 eq 22
+ remark Block CORP VLAN20 RDP access to SERVER VLAN10
+ deny   tcp 10.10.20.0 0.0.0.255 10.10.10.0 0.0.0.255 eq 3389
+ remark Allow established RDP return traffic from CORP VLAN20 to MGMT VLAN50
+ permit tcp 10.10.20.0 0.0.0.255 eq 3389 10.10.50.0 0.0.0.255 established
+ remark Allow ping replies from CORP VLAN20 back to MGMT VLAN50
+ permit icmp 10.10.20.0 0.0.0.255 10.10.50.0 0.0.0.255 echo-reply
+ remark Block CORP VLAN20 access to MGMT VLAN50
+ deny   ip 10.10.20.0 0.0.0.255 10.10.50.0 0.0.0.255
+ remark Block CORP VLAN20 access to GUEST VLAN30
+ deny   ip 10.10.20.0 0.0.0.255 10.10.30.0 0.0.0.255
+ remark Permit remaining legitimate CORP VLAN20 traffic
+ permit ip 10.10.20.0 0.0.0.255 any
+ remark Log abnormal non-VLAN20 traffic hitting this inbound ACL
+ deny   ip any any log
+ip access-list extended GUEST-ACL
+ remark Allow initial DHCP client requests before VLAN30 address is assigned
+ permit udp any eq bootpc any eq bootps
+ remark Allow Guest VLAN30 DNS to DC01
+ permit udp 10.10.30.0 0.0.0.255 host 10.10.10.10 eq domain
+ permit tcp 10.10.30.0 0.0.0.255 host 10.10.10.10 eq domain
+ remark Allow Guest VLAN30 DNS to DC02
+ permit udp 10.10.30.0 0.0.0.255 host 10.10.10.11 eq domain
+ permit tcp 10.10.30.0 0.0.0.255 host 10.10.10.11 eq domain
+ remark deny guest from accessing internal network
+ deny   ip 10.10.30.0 0.0.0.255 10.10.0.0 0.0.255.255
+ remark permit guest to access internet
+ permit ip 10.10.30.0 0.0.0.255 any
+ remark Log abnormal non-VLAN30 traffic hitting this inbound ACL
+ deny   ip any any log
+logging origin-id hostname
+logging source-interface GigabitEthernet0/0/1.10
+logging host 10.10.10.50
+!
+!
+snmp-server group zabbix-admin v3 priv
+tacacs server NEXUS01
+ address ipv4 10.10.10.70
+ key 7 redacted
+!
+!
+!
+!
+control-plane
+!
+!
+voice-port 0/2/0
+!
+voice-port 0/2/1
+!
+voice-port 0/2/2
+!
+voice-port 0/2/3
+!
+voice-port 0/2/4
+!
+voice-port 0/2/5
+!
+mgcp behavior rsip-range tgcp-only
+mgcp behavior comedia-role none
+mgcp behavior comedia-check-media-src disable
+mgcp behavior comedia-sdp-force disable
+!
+mgcp profile default
+!
+!
+!
+!
+!
+banner motd ^CCUnauthorized access is strictly prohibited!!!^C
+!
+line con 0
+ password 7 redacted
+ transport input none
+ stopbits 1
+line aux 0
+ stopbits 1
+line vty 0 4
+ access-class VTY-ACL in
+ transport input ssh
+!
+ntp server 10.10.10.10
+wsma agent exec
+!
+wsma agent config
+!
+wsma agent filesys
+!
+wsma agent notify
+!
+!
+end
+
+R2-CORE#

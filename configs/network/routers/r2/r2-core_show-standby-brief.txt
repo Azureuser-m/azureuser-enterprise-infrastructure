@@ -1,0 +1,10 @@
+R2-CORE#show standby brief
+                     P indicates configured to preempt.
+                     |
+Interface   Grp  Pri P State   Active          Standby         Virtual IP
+Gi0/0/1.10  10   105 P Standby 10.10.10.2      local           10.10.10.1
+Gi0/0/1.20  20   105 P Standby 10.10.20.2      local           10.10.20.1
+Gi0/0/1.30  30   105 P Standby 10.10.30.2      local           10.10.30.1
+Gi0/0/1.50  50   105 P Standby 10.10.50.2      local           10.10.50.1
+Gi0/0/1.254 254  105 P Standby 10.10.254.2     local           10.10.254.1
+R2-CORE#

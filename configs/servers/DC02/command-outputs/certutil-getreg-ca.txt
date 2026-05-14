@@ -1,0 +1,136 @@
+[DC02.corp.azureuser.org]: PS C:\Users\Administrator.CORP\Documents> certutil -getreg CA
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\CertSvc\Configuration\corp-ca:
+
+Keys:
+  CSP
+  EncryptionCSP
+  ExitModules
+  PolicyModules
+
+Values:
+  DSConfigDN               REG_SZ = CN=Configuration,DC=corp,DC=azureuser,DC=org
+  DSDomainDN               REG_SZ = DC=corp,DC=azureuser,DC=org
+  ViewAgeMinutes           REG_DWORD = 10 (16)
+  ViewIdleMinutes          REG_DWORD = 8
+  CAType                   REG_DWORD = 1
+    ENUM_ENTERPRISE_SUBCA -- 1
+
+  UseDS                    REG_DWORD = 1
+  ForceTeletex             REG_DWORD = 12 (18)
+    ENUM_TELETEX_AUTO -- 2
+    ENUM_TELETEX_UTF8 -- 10 (16)
+
+  SignedAttributes         REG_MULTI_SZ =
+    0: RequesterName
+
+  EKUOIDsForPublishExpiredCertInCRL REG_MULTI_SZ =
+    0: 1.3.6.1.5.5.7.3.3 Code Signing
+    1: 1.3.6.1.4.1.311.61.1.1 Kernel Mode Code Signing
+
+  CommonName               REG_SZ = corp-ca
+
+  Enabled                  REG_DWORD = 1
+  PolicyFlags              REG_DWORD = 0
+  CertEnrollCompatible     REG_DWORD = 0
+  CRLEditFlags             REG_DWORD = 100 (256)
+    EDITF_ENABLEAKIKEYID -- 100 (256)
+
+  CRLFlags                 REG_DWORD = a (10)
+    CRLF_DELETE_EXPIRED_CRLS -- 2
+    CRLF_REVCHECK_IGNORE_OFFLINE -- 8
+
+  InterfaceFlags           REG_DWORD = 641 (1601)
+    IF_LOCKICERTREQUEST -- 1
+    IF_NOREMOTEICERTADMINBACKUP -- 40 (64)
+    IF_ENFORCEENCRYPTICERTREQUEST -- 200 (512)
+    IF_ENFORCEENCRYPTICERTADMIN -- 400 (1024)
+
+  EnforceX500NameLengths   REG_DWORD = 1
+  SubjectTemplate          REG_MULTI_SZ =
+    0: EMail
+    1: CommonName
+    2: OrganizationalUnit
+    3: Organization
+    4: Locality
+    5: State
+    6: DomainComponent
+    7: Country
+
+  ClockSkewMinutes         REG_DWORD = a (10)
+  LogLevel                 REG_DWORD = 3
+
+  HighSerial               REG_DWORD = 6c (108)
+  CAServerName             REG_SZ = DC02.corp.azureuser.org
+  ValidityPeriod           REG_SZ = Years
+  ValidityPeriodUnits      REG_DWORD = 2
+  CAXchgCertHash           REG_MULTI_SZ =
+
+  KRACertHash              REG_MULTI_SZ =
+  KRACertCount             REG_DWORD = 0
+  KRAFlags                 REG_DWORD = 0
+
+  CRLPublicationURLs       REG_MULTI_SZ =
+    0: 65:C:\WINDOWS\system32\CertSrv\CertEnroll\%3%8%9.crl
+    CSURL_SERVERPUBLISH -- 1
+    CSURL_SERVERPUBLISHDELTA -- 40 (64)
+
+    1: 6:http://pki.corp.azureuser.org/pki/%3%8%9.crl
+    CSURL_ADDTOCERTCDP -- 2
+    CSURL_ADDTOFRESHESTCRL -- 4
+
+    2: 65:file://\\dc02.corp.azureuser.org\pki\%3%8%9.crl
+    CSURL_SERVERPUBLISH -- 1
+    CSURL_SERVERPUBLISHDELTA -- 40 (64)
+
+
+  CRLPeriod                REG_SZ = Months
+
+  CRLPeriodUnits           REG_DWORD = 3
+  CRLOverlapPeriod         REG_SZ = Hours
+  CRLOverlapUnits          REG_DWORD = 0
+  CRLDeltaPeriod           REG_SZ = Days
+  CRLDeltaPeriodUnits      REG_DWORD = 1
+
+  CRLDeltaOverlapPeriod    REG_SZ = Minutes
+  CRLDeltaOverlapUnits     REG_DWORD = 0
+  CAXchgValidityPeriod     REG_SZ = Weeks
+  CAXchgValidityPeriodUnits REG_DWORD = 1
+  CAXchgOverlapPeriod      REG_SZ = Days
+
+  CAXchgOverlapPeriodUnits REG_DWORD = 1
+  MaxIncomingMessageSize   REG_DWORD = 10000 (65536)
+  MaxIncomingAllocSize     REG_DWORD = 10000 (65536)
+  CACertPublicationURLs    REG_MULTI_SZ =
+    0: 1:C:\WINDOWS\system32\CertSrv\CertEnroll\%1_%3%4.crt
+    CSURL_SERVERPUBLISH -- 1
+
+    1: 3:ldap:///CN=%7,CN=AIA,CN=Public Key Services,CN=Services,%6%11
+    CSURL_SERVERPUBLISH -- 1
+    CSURL_ADDTOCERTCDP -- 2
+
+    2: 2:http://pki.corp.azureuser.org/pki/%1_%3.crt
+    CSURL_ADDTOCERTCDP -- 2
+
+    3: 0:file://\\dc02.corp.azureuser.org\pki\%1_%3.crt
+
+
+  RequestFileName          REG_SZ = C:\DC02.corp.azureuser.org_corp-DC02-CA%4.req
+
+  SetupStatus              REG_DWORD = 1
+    SETUP_SERVER_FLAG -- 1
+
+  Security                 REG_BINARY =
+    Allow CA Administrator      BUILTIN\Administrators
+    Allow Certificate Manager   BUILTIN\Administrators
+    Allow CA Administrator      CORP\Domain Admins
+    Allow Certificate Manager   CORP\Domain Admins
+    Allow CA Administrator      CORP\Enterprise Admins
+    Allow Certificate Manager   CORP\Enterprise Admins
+    Allow Enroll        NT AUTHORITY\Authenticated Users
+
+  CACertHash               REG_MULTI_SZ =
+    0: 39 00 59 4a ce c0 2d ae ef 93 0e b7 7a 88 0f f3 ca a3 ca 2b
+
+  CRLNextPublish           REG_BINARY = 7/7/2026 11:30 PM
+  CRLDeltaNextPublish      REG_BINARY = 5/2/2026 3:13 PM
+CertUtil: -getreg command completed successfully.

@@ -1,0 +1,24 @@
+R1-CORE#show ip access-lists
+Standard IP access list VTY-ACL
+    10 permit 10.10.50.0, wildcard bits 0.0.0.255 (4 matches)
+    20 deny   any
+Extended IP access list CORP-ACL
+    5 permit udp any eq bootpc any eq bootps
+    10 deny tcp 10.10.20.0 0.0.0.255 10.10.10.0 0.0.0.255 eq 22 (5 matches)
+    20 deny tcp 10.10.20.0 0.0.0.255 10.10.10.0 0.0.0.255 eq 3389
+    25 permit tcp 10.10.20.0 0.0.0.255 eq 3389 10.10.50.0 0.0.0.255 established (19 matches)
+    26 permit icmp 10.10.20.0 0.0.0.255 10.10.50.0 0.0.0.255 echo-reply (6 matches)
+    30 deny ip 10.10.20.0 0.0.0.255 10.10.50.0 0.0.0.255 (38 matches)
+    40 deny ip 10.10.20.0 0.0.0.255 10.10.30.0 0.0.0.255
+    50 permit ip 10.10.20.0 0.0.0.255 any (62961 matches)
+    99 deny ip any any log
+Extended IP access list GUEST-ACL
+    5 permit udp any eq bootpc any eq bootps
+    6 permit udp 10.10.30.0 0.0.0.255 host 10.10.10.10 eq domain
+    7 permit tcp 10.10.30.0 0.0.0.255 host 10.10.10.10 eq domain
+    8 permit udp 10.10.30.0 0.0.0.255 host 10.10.10.11 eq domain
+    9 permit tcp 10.10.30.0 0.0.0.255 host 10.10.10.11 eq domain
+    10 deny ip 10.10.30.0 0.0.0.255 10.10.0.0 0.0.255.255
+    20 permit ip 10.10.30.0 0.0.0.255 any (981 matches)
+    30 deny ip any any log
+R1-CORE#

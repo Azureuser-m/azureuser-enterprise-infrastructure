@@ -1,0 +1,7 @@
+
+SW1#show ip ssh
+SSH Enabled - version 2.0
+Authentication timeout: 120 secs; Authentication retries: 3
+Minimum expected Diffie Hellman key size : 1024 bits
+IOS Keys in SECSH format(ssh-rsa, base64 encoded):
+redacted

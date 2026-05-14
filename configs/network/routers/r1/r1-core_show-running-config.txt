@@ -1,0 +1,293 @@
+R1-CORE#show run
+Building configuration...
+
+
+Current configuration : 6331 bytes
+!
+! Last configuration change at 21:15:50 UTC Thu May 7 2026 by redacted-admin
+! NVRAM config last updated at 03:07:20 UTC Fri May 8 2026 by redacted-admin
+!
+version 15.4
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+service sequence-numbers
+!
+hostname R1-CORE
+!
+boot-start-marker
+boot-end-marker
+!
+!
+enable secret 5 redacted
+!
+aaa new-model
+!
+!
+aaa group server tacacs+ TACACS-GRP
+ server name NEXUS01
+!
+aaa authentication login default group TACACS-GRP local
+aaa authentication enable default group TACACS-GRP enable
+aaa authorization exec default group TACACS-GRP local
+aaa accounting exec default start-stop group TACACS-GRP
+aaa accounting commands 1 default stop-only group TACACS-GRP
+aaa accounting commands 15 default stop-only group TACACS-GRP
+!
+!
+!
+!
+!
+aaa session-id common
+memory-size iomem 10
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+no ip domain lookup
+ip domain name corp.azureuser.org
+ip name-server 10.10.10.10
+ip cef
+no ipv6 cef
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+cts logging verbose
+!
+!
+voice-card 0
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CISCO2901/K9 sn redacted
+license boot module c2900 technology-package securityk9
+license boot module c2900 technology-package uck9
+!
+!
+username redacted-admin secret 5 redacted
+!
+redundancy
+!
+!
+!
+!
+!
+track 254 ip sla 254 reachability
+!
+ip ssh version 2
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Embedded-Service-Engine0/0
+ no ip address
+ shutdown
+!
+interface GigabitEthernet0/0
+ no ip address
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/1
+ no ip address
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/1.10
+ description VLAN 10 (SERVERS) SUBINT
+ encapsulation dot1Q 10
+ ip address 10.10.10.2 255.255.255.0
+ standby 10 ip 10.10.10.1
+ standby 10 priority 110
+ standby 10 preempt
+ standby 10 track 254 decrement 30
+!
+interface GigabitEthernet0/1.20
+ description VLAN 20 (CORP) SUBINT
+ encapsulation dot1Q 20
+ ip address 10.10.20.2 255.255.255.0
+ ip access-group CORP-ACL in
+ ip helper-address 10.10.10.10
+ ip helper-address 10.10.10.11
+ standby 20 ip 10.10.20.1
+ standby 20 priority 110
+ standby 20 preempt
+ standby 20 track 254 decrement 30
+!
+interface GigabitEthernet0/1.30
+ description VLAN 30 (GUEST) SUBINT
+ encapsulation dot1Q 30
+ ip address 10.10.30.2 255.255.255.0
+ ip access-group GUEST-ACL in
+ ip helper-address 10.10.10.10
+ ip helper-address 10.10.10.11
+ standby 30 ip 10.10.30.1
+ standby 30 priority 110
+ standby 30 preempt
+ standby 30 track 254 decrement 30
+!
+interface GigabitEthernet0/1.50
+ description VLAN 50 (MGMT) SUBINT
+ encapsulation dot1Q 50
+ ip address 10.10.50.2 255.255.255.0
+ standby 50 ip 10.10.50.1
+ standby 50 priority 110
+ standby 50 preempt
+ standby 50 track 254 decrement 30
+!
+interface GigabitEthernet0/1.254
+ description VLAN 254 (TRANSIT TO PFSENSE LAN) SUBINT
+ encapsulation dot1Q 254
+ ip address 10.10.254.2 255.255.255.248
+ standby 254 ip 10.10.254.1
+ standby 254 priority 110
+ standby 254 preempt
+ standby 254 track 254 decrement 30
+!
+interface GigabitEthernet0/1.999
+ encapsulation dot1Q 999 native
+ shutdown
+!
+interface Serial0/0/0
+ no ip address
+ shutdown
+ clock rate 2000000
+!
+interface Serial0/0/1
+ no ip address
+ shutdown
+ clock rate 2000000
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+ip route 0.0.0.0 0.0.0.0 10.10.254.4
+!
+ip access-list standard VTY-ACL
+ permit 10.10.50.0 0.0.0.255
+ deny   any
+!
+ip access-list extended CORP-ACL
+ remark Allow initial DHCP client requests before VLAN20 address is assigned
+ permit udp any eq bootpc any eq bootps
+ remark Block CORP VLAN20 SSH access to SERVER VLAN10
+ deny   tcp 10.10.20.0 0.0.0.255 10.10.10.0 0.0.0.255 eq 22
+ remark Block CORP VLAN20 RDP access to SERVER VLAN10
+ deny   tcp 10.10.20.0 0.0.0.255 10.10.10.0 0.0.0.255 eq 3389
+ remark Allow established RDP return traffic from CORP VLAN20 to MGMT VLAN50
+ permit tcp 10.10.20.0 0.0.0.255 eq 3389 10.10.50.0 0.0.0.255 established
+ remark Allow ping replies from CORP VLAN20 back to MGMT VLAN50
+ permit icmp 10.10.20.0 0.0.0.255 10.10.50.0 0.0.0.255 echo-reply
+ remark Block CORP VLAN20 access to MGMT VLAN50
+ deny   ip 10.10.20.0 0.0.0.255 10.10.50.0 0.0.0.255
+ remark Block CORP VLAN20 access to GUEST VLAN30
+ deny   ip 10.10.20.0 0.0.0.255 10.10.30.0 0.0.0.255
+ remark Permit remaining legitimate CORP VLAN20 traffic
+ permit ip 10.10.20.0 0.0.0.255 any
+ remark Log abnormal non-VLAN20 traffic hitting this inbound ACL
+ deny   ip any any log
+ip access-list extended GUEST-ACL
+ remark Allow initial DHCP client requests before VLAN30 address is assigned
+ permit udp any eq bootpc any eq bootps
+ remark Allow Guest VLAN30 DNS to DC01
+ permit udp 10.10.30.0 0.0.0.255 host 10.10.10.10 eq domain
+ permit tcp 10.10.30.0 0.0.0.255 host 10.10.10.10 eq domain
+ remark Allow Guest VLAN30 DNS to DC02
+ permit udp 10.10.30.0 0.0.0.255 host 10.10.10.11 eq domain
+ permit tcp 10.10.30.0 0.0.0.255 host 10.10.10.11 eq domain
+ remark deny guest from accessing internal network
+ deny   ip 10.10.30.0 0.0.0.255 10.10.0.0 0.0.255.255
+ remark permit guest to access internet
+ permit ip 10.10.30.0 0.0.0.255 any
+ remark Log abnormal non-VLAN30 traffic hitting this inbound ACL
+ deny   ip any any log
+!
+ip sla 254
+ icmp-echo 10.10.254.4 source-interface GigabitEthernet0/1.254
+ frequency 5
+ip sla schedule 254 life forever start-time now
+logging origin-id hostname
+logging source-interface GigabitEthernet0/1.10
+logging host 10.10.10.50
+!
+!
+snmp-server group zabbix-admin v3 priv
+tacacs server NEXUS01
+ address ipv4 10.10.10.70
+ key 7 redacted
+!
+!
+!
+control-plane
+!
+ !
+ !
+ !
+ !
+!
+mgcp behavior rsip-range tgcp-only
+mgcp behavior comedia-role none
+mgcp behavior comedia-check-media-src disable
+mgcp behavior comedia-sdp-force disable
+!
+mgcp profile default
+!
+!
+!
+!
+!
+!
+!
+gatekeeper
+ shutdown
+!
+!
+banner motd ^CCUnauthorized access is strictly prohibited!!!^C
+!
+line con 0
+ password 7 redacted
+line aux 0
+line 2
+ no activation-character
+ no exec
+ transport preferred none
+ transport output pad telnet rlogin lapb-ta mop udptn v120 ssh
+ stopbits 1
+line vty 0 4
+ access-class VTY-ACL in
+ transport input ssh
+!
+scheduler allocate 20000 1000
+ntp server 10.10.10.10
+!
+end
+
+R1-CORE#

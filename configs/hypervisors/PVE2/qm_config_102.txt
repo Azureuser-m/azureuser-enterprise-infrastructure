@@ -1,0 +1,22 @@
+root@pve2:~# qm config 102
+agent: 1
+boot: order=scsi0;ide2;net0
+cores: 2
+cpu: host
+ide2: none,media=cdrom
+machine: q35
+memory: 4096
+meta: creation-qemu=10.1.2,ctime=1772847993
+name: WAZ01
+net0: virtio=BC:24:11:38:0C:42,bridge=vmbr1,tag=10
+numa: 0
+onboot: 1
+ostype: l26
+scsi0: local-lvm:vm-102-disk-0,cache=writeback,iothread=1,size=64G
+scsihw: virtio-scsi-single
+serial0: socket
+smbios1: uuid=834bbd3c-9a31-4ea4-a99b-1ab72593499a
+sockets: 1
+startup: order=3,up=300
+vga: virtio,clipboard=vnc
+vmgenid: 2998a7e7-be1a-417a-97c2-cd85bd14350a

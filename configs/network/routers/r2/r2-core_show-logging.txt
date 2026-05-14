@@ -1,0 +1,74 @@
+R2-CORE#show logging
+Syslog logging: enabled (0 messages dropped, 5 messages rate-limited, 0 flushes, 0 overruns, xml disabled, filtering disabled)
+
+No Active Message Discriminator.
+
+
+
+No Inactive Message Discriminator.
+
+
+    Console logging: level debugging, 265 messages logged, xml disabled,
+                     filtering disabled
+    Monitor logging: level debugging, 0 messages logged, xml disabled,
+                     filtering disabled
+    Buffer logging:  level debugging, 269 messages logged, xml disabled,
+                    filtering disabled
+    Exception Logging: size (4096 bytes)
+    Count and timestamp logging messages: disabled
+    Persistent logging: disabled
+
+No active filter modules.
+
+    Trap logging: level informational, 263 message lines logged
+        Logging to 10.10.10.50  (udp port 514, audit disabled,
+              link up),
+              130 message lines logged,
+              0 message lines rate-limited,
+              0 message lines dropped-by-MD,
+              xml disabled, sequence number disabled
+              filtering disabled
+        Logging Source-Interface:       VRF Name:
+        GigabitEthernet0/0/1.10
+
+Log Buffer (4096 bytes):
+Grp 20 state Speak -> Standby
+000228: *Apr 23 19:52:44.143: %HSRP-5-STATECHANGE: GigabitEthernet0/0/1.254 Grp 254 state Speak -> Standby
+000229: *Apr 23 19:53:25.168: %HSRP-5-STATECHANGE: GigabitEthernet0/0/1.50 Grp 50 state Standby -> Active
+000230: *Apr 23 19:53:26.359: %HSRP-5-STATECHANGE: GigabitEthernet0/0/1.20 Grp 20 state Standby -> Active
+000231: *Apr 23 19:53:26.763: %HSRP-5-STATECHANGE: GigabitEthernet0/0/1.10 Grp 10 state Standby -> Active
+000232: *Apr 23 19:53:27.455: %HSRP-5-STATECHANGE: GigabitEthernet0/0/1.254 Grp 254 state Standby -> Active
+000233: *Apr 23 19:53:28.691: %HSRP-5-STATECHANGE: GigabitEthernet0/0/1.30 Grp 30 state Standby -> Active
+000234: *Apr 23 19:57:35.270: %HSRP-5-STATECHANGE: GigabitEthernet0/0/1.10 Grp 10 state Active -> Speak
+000235: *Apr 23 19:57:35.726: %HSRP-5-STATECHANGE: GigabitEthernet0/0/1.50 Grp 50 state Active -> Speak
+000236: *Apr 23 19:57:35.734: %HSRP-5-STATECHANGE: GigabitEthernet0/0/1.254 Grp 254 state Active -> Speak
+000237: *Apr 23 19:57:36.083: %HSRP-5-STATECHANGE: GigabitEthernet0/0/1.30 Grp 30 state Active -> Speak
+000238: *Apr 23 19:57:36.182: %HSRP-5-STATECHANGE: GigabitEthernet0/0/1.20 Grp 20 state Active -> Speak
+000239: *Apr 23 19:57:46.052: %HSRP-5-STATECHANGE: GigabitEthernet0/0/1.50 Grp 50 state Speak -> Standby
+000240: *Apr 23 19:57:46.229: %HSRP-5-STATECHANGE: GigabitEthernet0/0/1.30 Grp 30 state Speak -> Standby
+000241: *Apr 23 19:57:46.904: %HSRP-5-STATECHANGE: GigabitEthernet0/0/1.10 Grp 10 state Speak -> Standby
+000242: *Apr 23 19:57:47.160: %HSRP-5-STATECHANGE: GigabitEthernet0/0/1.254 Grp 254 state Speak -> Standby
+000243: *Apr 23 19:57:47.336: %HSRP-5-STATECHANGE: GigabitEthernet0/0/1.20 Grp 20 state Speak -> Standby
+000244: *Apr 23 19:57:49.297: %HSRP-5-STATECHANGE: GigabitEthernet0/0/1.20 Grp 20 state Standby -> Active
+000245: *Apr 23 19:57:49.523: %HSRP-5-STATECHANGE: GigabitEthernet0/0/1.10 Grp 10 state Standby -> Active
+000246: *Apr 23 19:57:50.022: %HSRP-5-STATECHANGE: GigabitEthernet0/0/1.254 Grp 254 state Standby -> Active
+000247: *Apr 23 19:57:50.214: %HSRP-5-STATECHANGE: GigabitEthernet0/0/1.50 Grp 50 state Standby -> Active
+000248: *Apr 23 19:57:50.454: %HSRP-5-STATECHANGE: GigabitEthernet0/0/1.30 Grp 30 state Standby -> Active
+000249: *Apr 23 19:58:15.291: %HSRP-5-STATECHANGE: GigabitEthernet0/0/1.30 Grp 30 state Active -> Speak
+000250: *Apr 23 19:58:15.323: %HSRP-5-STATECHANGE: GigabitEthernet0/0/1.50 Grp 50 state Active -> Speak
+000251: *Apr 23 19:58:15.873: %HSRP-5-STATECHANGE: GigabitEthernet0/0/1.254 Grp 254 state Active -> Speak
+000252: *Apr 23 19:58:16.593: %HSRP-5-STATECHANGE: GigabitEthernet0/0/1.20 Grp 20 state Active -> Speak
+000253: *Apr 23 19:58:16.737: %HSRP-5-STATECHANGE: GigabitEthernet0/0/1.10 Grp 10 state Active -> Speak
+000254: *Apr 23 19:58:25.615: %HSRP-5-STATECHANGE: GigabitEthernet0/0/1.50 Grp 50 state Speak -> Standby
+000255: *Apr 23 19:58:26.066: %HSRP-5-STATECHANGE: GigabitEthernet0/0/1.254 Grp 254 state Speak -> Standby
+000256: *Apr 23 19:58:26.419: %HSRP-5-STATECHANGE: GigabitEthernet0/0/1.30 Grp 30 state Speak -> Standby
+000257: *Apr 23 19:58:26.644: %HSRP-5-STATECHANGE: GigabitEthernet0/0/1.20 Grp 20 state Speak -> Standby
+000258: *Apr 23 19:58:27.480: %HSRP-5-STATECHANGE: GigabitEthernet0/0/1.10 Grp 10 state Speak -> Standby
+000259: *May  8 03:40:03.248: %SSH-3-NO_MATCH: No matching cipher found: client aes128-cbc server aes128-ctr,aes192-ctr,aes256-ctr
+000260: *May  9 06:26:51.328: %SSH-3-NO_MATCH: No matching cipher found: client aes128-cbc server aes128-ctr,aes192-ctr,aes256-ctr
+000261: May  9 06:21:13.010: %SYS-5-CONFIG_I: Configured from console by redacted-admin on vty0 (redacted-ip)
+000262: May  9 06:21:19.010: %SYS-6-LOGGINGHOST_STARTSTOP: Logging to host 10.10.10.50 port 514 started - reconnection
+000263: May  9 06:22:45.374: %SYS-5-CONFIG_I: Configured from console by redacted-admin on vty0 (redacted-ip)
+000264: May  9 06:23:51.392: %SYS-5-CONFIG_I: Configured from console by redacted-admin on vty0 (redacted-ip)
+000265: May  9 06:24:04.224: %SYS-2-PRIVCFG_ENCRYPT: Successfully encrypted private config file
+R2-CORE#

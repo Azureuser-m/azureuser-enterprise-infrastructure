@@ -1,0 +1,20 @@
+[DC02.corp.azureuser.org]: PS C:\Users\Administrator.CORP\Documents> certutil -dump
+Entry 0: (Local)
+  Name:                         "corp-ca"
+  Organizational Unit:          ""
+  Organization:                 ""
+  Locality:                     ""
+  State:                        ""
+  Country/region:               ""
+  Config:                       "DC02.corp.azureuser.org\corp-ca"
+  Exchange Certificate:         ""
+  Signature Certificate:        "DC02.corp.azureuser.org_corp-ca.crt"
+  Description:                  ""
+  Server:                       "DC02.corp.azureuser.org"
+  Authority:                    "corp-ca"
+  Sanitized Name:               "corp-ca"
+  Short Name:                   "corp-ca"
+  Sanitized Short Name:         "corp-ca"
+  Flags:                        "13"
+  Web Enrollment Servers:       ""
+CertUtil: -dump command completed successfully.

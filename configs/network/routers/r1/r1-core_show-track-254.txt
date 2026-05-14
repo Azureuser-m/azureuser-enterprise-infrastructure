@@ -1,0 +1,14 @@
+R1-CORE#show track 254
+Track 254
+  IP SLA 254 reachability
+  Reachability is Up
+    1 change, last change 05:54:24
+  Latest operation return code: OK
+  Latest RTT (millisecs) 1
+  Tracked by:
+    HSRP GigabitEthernet0/1.10 10
+    HSRP GigabitEthernet0/1.20 20
+    HSRP GigabitEthernet0/1.30 30
+    HSRP GigabitEthernet0/1.50 50
+    HSRP GigabitEthernet0/1.254 254
+R1-CORE#

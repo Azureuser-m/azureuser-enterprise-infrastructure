@@ -1,0 +1,25 @@
+root@pve1:~# qm config 104
+agent: 1
+bios: ovmf
+boot: order=scsi1;scsi0;ide2;net0;ide0
+cores: 2
+cpu: x86-64-v2-AES
+efidisk0: local-lvm:vm-104-disk-0,efitype=4m,ms-cert=2023,pre-enrolled-keys=1,size=4M
+ide0: local:iso/virtio-win-0.1.285.iso,media=cdrom,size=771138K
+ide2: local:iso/Win11_25H2_English_x64.iso,media=cdrom,size=7554810K
+machine: pc-q35-10.1
+memory: 8222
+meta: creation-qemu=10.1.2,ctime=1772477666
+name: ADM01
+net0: virtio=BC:24:11:B2:02:D9,bridge=vmbr1,tag=50
+numa: 0
+onboot: 1
+ostype: win11
+scsi0: local-lvm:vm-104-disk-1,iothread=1,size=32G
+scsi1: local-lvm:vm-104-disk-3,iothread=1,size=64G
+scsihw: virtio-scsi-single
+smbios1: uuid=eb970e67-ba53-4ed9-816e-9ae324638ed5
+sockets: 1
+startup: order=3,up=300
+tpmstate0: local-lvm:vm-104-disk-2,size=4M,version=v2.0
+vmgenid: 2f1ba7f6-dba3-4308-8a45-d479ffb8b605

@@ -1,0 +1,19 @@
+root@pve2:~# cat /etc/pve/domains.cfg
+pam: pam
+        comment Linux PAM standard authentication
+
+pve: pve
+        comment Proxmox VE authentication server
+
+ad: corp.ad
+        comment AD authentication
+        domain corp.azureuser.org
+        server1 10.10.10.10
+        base_dn DC=corp,DC=azureuser,DC=org
+        bind_dn CN=Domain Join Service Account, OU=ServiceAccounts,OU=Users,OU=Corporate,DC=corp,DC=azureuser,DC=org
+        case-sensitive 1
+        default 1
+        mode ldaps
+        port 636
+        server2 10.10.10.11
+        sync-defaults-options scope=both

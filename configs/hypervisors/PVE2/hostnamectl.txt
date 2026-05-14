@@ -1,0 +1,15 @@
+ Static hostname: pve2
+       Icon name: computer-desktop
+         Chassis: desktop 🖥️
+      Machine ID: 5aa0073d0ea74d779b5b9ac0f50e1a77
+         Boot ID: c770f1f36b414b39aaa35efba30d62dd
+    Product UUID: 166ec100-d7da-11dd-9ed5-74d02b26fd13
+Operating System: Debian GNU/Linux 13 (trixie)        
+          Kernel: Linux 6.17.13-1-pve
+    Architecture: x86-64
+ Hardware Vendor: ASUSTeK COMPUTER INC.
+  Hardware Model: P8H77-M
+ Hardware Serial: System Serial Number
+Firmware Version: 1101
+   Firmware Date: Wed 2013-02-06
+    Firmware Age: 13y 2month 3w 2d 

@@ -1,0 +1,43 @@
+ <!-- syslog input from pfSense -->
+  <remote>
+    <connection>syslog</connection>
+    <port>514</port>
+    <protocol>udp</protocol>
+    <allowed-ips>10.10.254.4</allowed-ips>
+  </remote>
+
+<!-- syslog input from R1-CORE -->
+<remote>
+  <connection>syslog</connection>
+  <port>514</port>
+  <protocol>udp</protocol>
+  <allowed-ips>10.10.10.2</allowed-ips>
+  <local_ip>10.10.10.50</local_ip>
+</remote>
+
+<!-- syslog input from R2-CORE -->
+<remote>
+  <connection>syslog</connection>
+  <port>514</port>
+  <protocol>udp</protocol>
+  <allowed-ips>10.10.10.3</allowed-ips>
+  <local_ip>10.10.10.50</local_ip>
+</remote>
+
+<!-- syslog input from SW1 -->
+<remote>
+  <connection>syslog</connection>
+  <port>514</port>
+  <protocol>udp</protocol>
+  <allowed-ips>10.10.50.9</allowed-ips>
+  <local_ip>10.10.10.50</local_ip>
+</remote>
+
+<!-- syslog input from SW2 -->
+<remote>
+  <connection>syslog</connection>
+  <port>514</port>
+  <protocol>udp</protocol>
+  <allowed-ips>10.10.50.10</allowed-ips>
+  <local_ip>10.10.10.50</local_ip>
+</remote>

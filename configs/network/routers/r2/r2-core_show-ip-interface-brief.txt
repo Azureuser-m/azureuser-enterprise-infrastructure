@@ -1,0 +1,15 @@
+R2-CORE#show ip interface brief
+Interface              IP-Address      OK? Method Status                Protocol
+GigabitEthernet0/0/0   unassigned      YES manual administratively down down
+GigabitEthernet0/0/1   unassigned      YES unset  up                    up
+Gi0/0/1.10             10.10.10.3      YES manual up                    up
+Gi0/0/1.20             10.10.20.3      YES manual up                    up
+Gi0/0/1.30             10.10.30.3      YES manual up                    up
+Gi0/0/1.50             10.10.50.3      YES manual up                    up
+Gi0/0/1.254            10.10.254.3     YES manual up                    up
+Gi0/0/1.999            unassigned      YES unset  administratively down down
+Serial0/1/0            unassigned      YES unset  administratively down down
+Serial0/1/1            unassigned      YES unset  administratively down down
+Service-Engine0/2/0    unassigned      YES unset  administratively down down
+GigabitEthernet0       unassigned      YES unset  administratively down down
+R2-CORE#

@@ -1,0 +1,23 @@
+root@pve2:~# qm config 100
+agent: 1
+bios: ovmf
+boot: order=scsi0;ide2;net0
+cores: 2
+cpu: host
+ide2: local:iso/netgate-installer-v1.1.1-RELEASE-amd64.iso,media=cdrom,size=998840K
+kvm: 1
+machine: q35
+memory: 4064
+meta: creation-qemu=10.1.2,ctime=1772484681
+name: PFS02
+net0: virtio=BC:24:11:AE:56:FD,bridge=vmbr0
+net1: virtio=BC:24:11:03:21:84,bridge=vmbr1,firewall=1,tag=254
+net2: virtio=BC:24:11:9D:8A:A4,bridge=vmbr2,firewall=1,tag=253
+numa: 0
+ostype: l26
+scsi0: local-lvm:vm-100-disk-1,iothread=1,size=32G
+scsihw: virtio-scsi-single
+smbios1: uuid=178aa598-b348-4181-b0ac-79539f9e99e4
+sockets: 1
+startup: order=1,up=20
+vmgenid: 49a225ed-78bb-4f17-b4cd-c4dda8fc45d5

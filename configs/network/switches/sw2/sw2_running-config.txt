@@ -1,0 +1,352 @@
+SW2#show run
+Building configuration...
+
+Current configuration : 8519 bytes
+!
+! Last configuration change at 20:18:50 UTC Mon May 11 2026 by redacted-admin
+! NVRAM config last updated at 20:19:55 UTC Mon May 11 2026 by redacted-admin
+!
+version 15.0
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+service sequence-numbers
+!
+hostname SW2
+!
+boot-start-marker
+boot-end-marker
+!
+enable secret 5 redacted
+!
+username redacted-admin secret 5 redacted
+aaa new-model
+!
+!
+aaa group server tacacs+ TACACS-GRP
+ server name NEXUS01
+!
+aaa authentication login default group TACACS-GRP local
+aaa authentication enable default group TACACS-GRP enable
+aaa authorization exec default group TACACS-GRP local
+aaa accounting exec default start-stop group TACACS-GRP
+aaa accounting commands 1 default stop-only group TACACS-GRP
+aaa accounting commands 15 default stop-only group TACACS-GRP
+!
+!
+!
+!
+!
+!
+aaa session-id common
+system mtu routing 1500
+ip arp inspection vlan 20,30
+ip arp inspection validate src-mac dst-mac ip
+!
+!
+ip dhcp snooping vlan 20,30
+no ip dhcp snooping information option
+ip dhcp snooping
+no ip domain-lookup
+ip domain-name corp.azureuser.org
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+!
+ip ssh version 2
+!
+!
+!
+!
+!
+interface Port-channel1
+ description INTERFACE CONNECTED TO SW1 LACP
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 10,20,30,50,254
+ switchport mode trunk
+ switchport nonegotiate
+ ip arp inspection trust
+ ip dhcp snooping trust
+!
+interface FastEthernet0/1
+ description INTERFACE CONNECTED TO PVE2
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 10,20,30,50,254
+ switchport mode trunk
+ switchport nonegotiate
+ ip arp inspection trust
+ ip dhcp snooping trust
+!
+interface FastEthernet0/2
+ description INTERFACE CONNECTED TO PVE1
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 10,20,30,50,254
+ switchport mode trunk
+ switchport nonegotiate
+ ip arp inspection trust
+ ip dhcp snooping trust
+!
+interface FastEthernet0/3
+ description out-of-band mgmt
+ switchport access vlan 50
+ switchport mode access
+ switchport port-security maximum 3
+ switchport port-security violation restrict
+ switchport port-security mac-address sticky
+ switchport port-security mac-address sticky b496.912b.8d9c
+ switchport port-security
+!
+interface FastEthernet0/4
+ description UNUSED INTERFACES, SHUTDOWN
+ switchport access vlan 998
+ switchport mode access
+ switchport nonegotiate
+ ip arp inspection limit rate 10
+ shutdown
+ spanning-tree bpduguard enable
+ ip dhcp snooping limit rate 10
+!
+interface FastEthernet0/5
+ description AP-2 GUEST
+ switchport access vlan 30
+ switchport mode access
+ switchport nonegotiate
+ ip arp inspection limit rate 50
+ shutdown
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ ip dhcp snooping limit rate 50
+!
+interface FastEthernet0/6
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 10,20,30,50,254
+ switchport mode trunk
+ switchport nonegotiate
+ ip arp inspection trust
+ channel-group 1 mode active
+ ip dhcp snooping trust
+!
+interface FastEthernet0/7
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 10,20,30,50,254
+ switchport mode trunk
+ switchport nonegotiate
+ ip arp inspection trust
+ channel-group 1 mode active
+ ip dhcp snooping trust
+!
+interface FastEthernet0/8
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 10,20,30,50,254
+ switchport mode trunk
+ switchport nonegotiate
+ ip arp inspection trust
+ channel-group 1 mode active
+ ip dhcp snooping trust
+!
+interface FastEthernet0/9
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 10,20,30,50,254
+ switchport mode trunk
+ switchport nonegotiate
+ ip arp inspection trust
+ channel-group 1 mode active
+ ip dhcp snooping trust
+!
+interface FastEthernet0/10
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 10,20,30,50,254
+ switchport mode trunk
+ switchport nonegotiate
+ ip arp inspection trust
+ channel-group 1 mode active
+ ip dhcp snooping trust
+!
+interface FastEthernet0/11
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 10,20,30,50,254
+ switchport mode trunk
+ switchport nonegotiate
+ ip arp inspection trust
+ channel-group 1 mode active
+ ip dhcp snooping trust
+!
+interface FastEthernet0/12
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 10,20,30,50,254
+ switchport mode trunk
+ switchport nonegotiate
+ ip arp inspection trust
+ channel-group 1 mode active
+ ip dhcp snooping trust
+!
+interface FastEthernet0/13
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 10,20,30,50,254
+ switchport mode trunk
+ switchport nonegotiate
+ ip arp inspection trust
+ channel-group 1 mode active
+ ip dhcp snooping trust
+!
+interface FastEthernet0/14
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 10,20,30,50,254
+ switchport mode trunk
+ switchport nonegotiate
+ ip arp inspection trust
+ channel-group 1 mode active
+ ip dhcp snooping trust
+!
+interface FastEthernet0/15
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 10,20,30,50,254
+ switchport mode trunk
+ switchport nonegotiate
+ ip arp inspection trust
+ channel-group 1 mode active
+ ip dhcp snooping trust
+!
+interface FastEthernet0/16
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 10,20,30,50,254
+ switchport mode trunk
+ switchport nonegotiate
+ ip arp inspection trust
+ channel-group 1 mode active
+ ip dhcp snooping trust
+!
+interface FastEthernet0/17
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 10,20,30,50,254
+ switchport mode trunk
+ switchport nonegotiate
+ ip arp inspection trust
+ channel-group 1 mode active
+ ip dhcp snooping trust
+!
+interface FastEthernet0/18
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 10,20,30,50,254
+ switchport mode trunk
+ switchport nonegotiate
+ ip arp inspection trust
+ channel-group 1 mode active
+ ip dhcp snooping trust
+!
+interface FastEthernet0/19
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 10,20,30,50,254
+ switchport mode trunk
+ switchport nonegotiate
+ ip arp inspection trust
+ channel-group 1 mode active
+ ip dhcp snooping trust
+!
+interface FastEthernet0/20
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 10,20,30,50,254
+ switchport mode trunk
+ switchport nonegotiate
+ ip arp inspection trust
+ channel-group 1 mode active
+ ip dhcp snooping trust
+!
+interface FastEthernet0/21
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 10,20,30,50,254
+ switchport mode trunk
+ switchport nonegotiate
+ ip arp inspection trust
+ channel-group 1 mode active
+ ip dhcp snooping trust
+!
+interface FastEthernet0/22
+ description UNUSED INTERFACES, SHUTDOWN
+ switchport access vlan 998
+ switchport mode access
+ switchport nonegotiate
+ ip arp inspection limit rate 10
+ shutdown
+ spanning-tree bpduguard enable
+ ip dhcp snooping limit rate 10
+!
+interface FastEthernet0/23
+ description UNUSED INTERFACES, SHUTDOWN
+ switchport access vlan 998
+ switchport mode access
+ switchport nonegotiate
+ ip arp inspection limit rate 10
+ shutdown
+ spanning-tree bpduguard enable
+ ip dhcp snooping limit rate 10
+!
+interface FastEthernet0/24
+ description UNUSED INTERFACES, SHUTDOWN
+ switchport access vlan 998
+ switchport mode access
+ switchport nonegotiate
+ ip arp inspection limit rate 10
+ shutdown
+ spanning-tree bpduguard enable
+ ip dhcp snooping limit rate 10
+!
+interface GigabitEthernet0/1
+ description INTERFACE CONNECTED TO R2-CORE
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 10,20,30,50,254
+ switchport mode trunk
+ switchport nonegotiate
+ ip arp inspection trust
+ ip dhcp snooping trust
+!
+interface GigabitEthernet0/2
+ description RESERVED - FUTURE R1-CORE UPLINK
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 10,20,30,50,254
+ switchport mode trunk
+ switchport nonegotiate
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan50
+ ip address 10.10.50.10 255.255.255.0
+!
+ip default-gateway 10.10.50.1
+no ip http server
+no ip http secure-server
+logging origin-id hostname
+logging source-interface FastEthernet0/1
+logging host 10.10.10.50
+snmp-server group zabbix-admin v3 priv
+tacacs server NEXUS01
+ address ipv4 10.10.10.70
+ key 7 redacted
+!
+!
+!
+banner motd ^CCUnauthorized access is strictly prohibited!!!^C
+!
+line con 0
+ password 7 redacted
+line vty 0 4
+ transport input ssh
+line vty 5 15
+!
+ntp server 10.10.10.10
+end
+
+SW2#

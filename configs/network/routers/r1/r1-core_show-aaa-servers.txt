@@ -1,0 +1,14 @@
+R1-CORE#show tacacs
+
+Tacacs+ Server -  redacted  :
+               Server name: NEXUS01
+            Server address: 10.10.10.70
+               Server port: 49
+              Socket opens:         26
+             Socket closes:         26
+             Socket aborts:          0
+             Socket errors:          0
+           Socket Timeouts:          0
+   Failed Connect Attempts:          0
+        Total Packets Sent:         29
+        Total Packets Recv:         29

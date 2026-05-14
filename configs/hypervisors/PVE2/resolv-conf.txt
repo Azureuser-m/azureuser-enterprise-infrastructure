@@ -1,0 +1,4 @@
+search corp.azureuser.org
+nameserver 10.10.10.10
+nameserver 10.10.10.11
+nameserver 10.10.254.5

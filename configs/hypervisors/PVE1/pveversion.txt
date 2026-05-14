@@ -1,0 +1,6 @@
+proxmox-ve: 9.1.0 (running kernel: 6.17.13-1-pve)
+pve-manager: 9.1.6 (running version: 9.1.6/71482d1833ded40a)
+proxmox-kernel-helper: 9.0.4
+proxmox-kernel-6.17: 6.17.13-1
+proxmox-kernel-6.17.13-1-pve-signed: 6.17.13-1
+proxmox-kernel-6.17.2-1-pve-signed: 6.17.2-1

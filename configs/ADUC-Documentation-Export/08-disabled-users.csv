@@ -1,0 +1,3 @@
+"SamAccountName","Name","Description","LastLogonDate","whenCreated","DistinguishedName"
+"Guest","Guest","Built-in account for guest access to the computer/domain",,"3/3/2026 11:34:15 PM","CN=Guest,CN=Users,DC=corp,DC=azureuser,DC=org"
+"krbtgt","krbtgt","Key Distribution Center Service Account",,"3/3/2026 11:37:29 PM","CN=krbtgt,CN=Users,DC=corp,DC=azureuser,DC=org"

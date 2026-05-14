@@ -1,0 +1,1 @@
+“PFS02 LAN DHCP server is disabled. The displayed pool/subnet range on VLAN 254 is automatic interface/subnet information, not an active DHCP scope.”

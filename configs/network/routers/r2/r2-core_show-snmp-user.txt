@@ -1,0 +1,8 @@
+R2-CORE#show snmp user
+
+User name: redacted-admin
+Engine ID: redacted
+storage-type: nonvolatile        active
+Authentication Protocol: MD5
+Privacy Protocol: AES128
+Group-name: zabbix-admin

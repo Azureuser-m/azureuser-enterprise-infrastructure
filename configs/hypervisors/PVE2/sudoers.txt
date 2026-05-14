@@ -1,0 +1,5 @@
+root@pve2:~# cat /etc/sudoers.d/pve-sudoers 
+azuremaster@corp.azureuser.org ALL=(ALL:ALL) ALL
+younglord@corp.azureuser.org ALL=(ALL:ALL) ALL
+root@pve2:~# cat /etc/sudoers.d/ansible 
+ansible   ALL=(ALL) ALL

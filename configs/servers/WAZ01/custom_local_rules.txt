@@ -1,0 +1,67 @@
+<!-- Local rules -->
+
+<!-- Modify it at your will. -->
+<!-- Copyright (C) 2015, Wazuh Inc. -->
+
+<!-- /var/ossec/etc/rules/local_rules.xml -->
+<group name="local,zabbix_exceptions,">
+  <rule id="100100" level="5">
+    <if_sid>31533</if_sid>
+    <srcip>10.10.50.0/24</srcip>
+    <url type="pcre2">^/zabbix\.php(\?.*)?$</url>
+    <description>Ignore 31533 Zabbix POST burst from trusted subnet</description>
+  </rule>
+</group>
+
+<group name="pfsense,firewall,">
+  <rule id="100200" level="2">
+    <decoded_as>pfsense-rfc5424-filterlog</decoded_as>
+    <description>pfSense filterlog event</description>
+  </rule>
+
+  <rule id="100201" level="3">
+    <if_sid>100200</if_sid>
+    <action>pass</action>
+    <description>pfSense firewall allow event</description>
+    <group>firewall_allow,</group>
+  </rule>
+
+  <rule id="100202" level="5">
+    <if_sid>100200</if_sid>
+    <action>block</action>
+    <description>pfSense firewall block event</description>
+    <group>firewall_block,</group>
+  </rule>
+
+  <rule id="100203" level="7">
+    <if_sid>100202</if_sid>
+    <protocol>tcp</protocol>
+    <dstport type="pcre2">^(22|23|80|443|445|3389|5985|5986|5900)$</dstport>
+    <description>pfSense block against administrative or sensitive service</description>
+    <group>firewall_block,admin_service,</group>
+  </rule>
+
+  <rule id="100204" level="10" frequency="6" timeframe="60">
+    <if_matched_sid>100202</if_matched_sid>
+    <same_srcip />
+    <same_dstport />
+    <description>pfSense possible brute force or repeated denied access from same source to same port</description>
+    <group>firewall_block,bruteforce,</group>
+  </rule>
+
+  <rule id="100205" level="10" frequency="10" timeframe="60">
+    <if_matched_sid>100202</if_matched_sid>
+    <same_srcip />
+    <different_dstport />
+    <description>pfSense possible port scan from same source across multiple ports</description>
+    <group>firewall_block,port_scan,</group>
+  </rule>
+
+  <rule id="100206" level="12" frequency="15" timeframe="120">
+    <if_matched_sid>100202</if_matched_sid>
+    <same_srcip />
+    <different_dstip />
+    <description>pfSense broader reconnaissance or lateral scan from same source across multiple hosts</description>
+    <group>firewall_block,reconnaissance,</group>
+  </rule>
+</group>

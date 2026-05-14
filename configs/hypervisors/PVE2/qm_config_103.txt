@@ -1,0 +1,25 @@
+root@pve2:~# qm config 103
+agent: 1
+bios: ovmf
+boot: order=scsi0;ide2;net0;ide3
+cores: 4
+cpu: host
+efidisk0: local-lvm:vm-103-disk-0,efitype=4m,ms-cert=2023w,pre-enrolled-keys=1,size=4M
+ide2: local:iso/WIN_SERVER_2025_EVAL_x64FRE_en-us.iso,media=cdrom,size=7961286K
+ide3: local:iso/virtio-win.iso,media=cdrom,size=771138K
+kvm: 1
+machine: pc-q35-10.1
+memory: 8448
+meta: creation-qemu=10.1.2,ctime=1773780237
+name: BKU01
+net0: virtio=BC:24:11:DC:8A:7A,bridge=vmbr1,tag=10
+numa: 0
+ostype: win11
+scsi0: local-lvm:vm-103-disk-1,cache=writeback,iothread=1,size=300G
+scsi1: local_backup:vm-103-disk-0,size=455G
+scsihw: virtio-scsi-single
+smbios1: uuid=b35724a0-0af7-4017-8a60-4b2a24e8ebb4
+sockets: 1
+startup: order=4,up=500
+tpmstate0: local-lvm:vm-103-disk-2,size=4M,version=v2.0
+vmgenid: 98bf7065-8276-48f0-be02-2271d4007435

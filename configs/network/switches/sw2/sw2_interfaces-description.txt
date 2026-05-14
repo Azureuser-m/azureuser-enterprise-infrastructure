@@ -1,0 +1,31 @@
+SW2#show int description
+Interface                      Status         Protocol Description
+Vl1                            admin down     down
+Vl50                           up             up
+Fa0/1                          up             up       INTERFACE CONNECTED TO PVE2
+Fa0/2                          down           down     INTERFACE CONNECTED TO PVE1
+Fa0/3                          up             up       out-of-band mgmt
+Fa0/4                          admin down     down     UNUSED INTERFACES, SHUTDOWN
+Fa0/5                          admin down     down     AP-2 GUEST
+Fa0/6                          up             up
+Fa0/7                          up             up
+Fa0/8                          up             up
+Fa0/9                          up             up
+Fa0/10                         up             up
+Fa0/11                         up             up
+Fa0/12                         up             up
+Fa0/13                         up             up
+Fa0/14                         up             down
+Fa0/15                         up             down
+Fa0/16                         up             down
+Fa0/17                         up             down
+Fa0/18                         up             down
+Fa0/19                         up             down
+Fa0/20                         up             down
+Fa0/21                         up             down
+Fa0/22                         admin down     down     UNUSED INTERFACES, SHUTDOWN
+Fa0/23                         admin down     down     UNUSED INTERFACES, SHUTDOWN
+Fa0/24                         admin down     down     UNUSED INTERFACES, SHUTDOWN
+Gi0/1                          up             up       INTERFACE CONNECTED TO R2-CORE
+Gi0/2                          admin down     down     RESERVED - FUTURE R1-CORE UPLINK
+Po1                            up             up       INTERFACE CONNECTED TO SW1 LACP

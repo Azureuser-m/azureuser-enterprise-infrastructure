@@ -1,0 +1,2 @@
+127.0.0.1 localhost.localdomain localhost
+10.10.50.5 pve1.azureuser.org pve1

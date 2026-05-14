@@ -1,0 +1,8 @@
+root@pve1:~# qm list
+      VMID NAME                 STATUS     MEM(MB)    BOOTDISK(GB) PID       
+       100 PFSENSE-01           running    3072              32.00 1790      
+       101 DC01                 running    7000              64.00 1999      
+       102 ROOTCA01             stopped    4096              64.00 0         
+       103 NEXUS01              stopped    5536             128.00 0         
+       104 ADM01                running    8222              64.00 2539      
+       105 ZBX01                running    3072              32.00 12001     

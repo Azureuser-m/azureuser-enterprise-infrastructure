@@ -1,0 +1,19 @@
+root@pve1:~# qm config 103
+agent: 1
+boot: order=scsi0;net0
+cores: 4
+cpu: host
+ide2: local:iso/VMware-VMvisor-Installer-8.0U3e-24677879.x86_64.iso,media=cdrom,size=633178K
+machine: q35
+memory: 5536
+meta: creation-qemu=10.1.2,ctime=1773948363
+name: NEXUS01
+net0: virtio=BC:24:11:3A:BD:85,bridge=vmbr1,tag=10
+numa: 0
+ostype: l26
+scsi0: vm-storage2:vm-103-disk-1,cache=writeback,iothread=1,size=128G
+scsihw: virtio-scsi-single
+serial0: socket
+smbios1: uuid=dca6f297-a30c-419d-829c-299a1f6f2908
+sockets: 1
+vmgenid: ceed3f19-9453-4844-9151-a64b56fbb858
