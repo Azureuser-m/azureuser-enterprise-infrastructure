@@ -1,0 +1,74 @@
+SW2#show logging
+Syslog logging: enabled (0 messages dropped, 0 messages rate-limited, 0 flushes, 0 overruns, xml disabled, filtering disabled)
+
+No Active Message Discriminator.
+
+
+
+No Inactive Message Discriminator.
+
+
+    Console logging: level debugging, 4001 messages logged, xml disabled,
+                     filtering disabled
+    Monitor logging: level debugging, 0 messages logged, xml disabled,
+                     filtering disabled
+    Buffer logging:  level debugging, 4002 messages logged, xml disabled,
+                    filtering disabled
+    Exception Logging: size (4096 bytes)
+    Count and timestamp logging messages: disabled
+    File logging: disabled
+    Persistent logging: disabled
+
+No active filter modules.
+
+    Trap logging: level informational, 4005 message lines logged
+        Logging to 10.10.10.50  (udp port 514, audit disabled,
+              link up),
+              2387 message lines logged,
+              0 message lines rate-limited,
+              0 message lines dropped-by-MD,
+              xml disabled, sequence number disabled
+              filtering disabled
+        Logging Source-Interface:       VRF Name:
+        FastEthernet0/1
+
+Log Buffer (4096 bytes):
+t0/4, changed state to administratively down
+003966: *May 11 23:34:23.740: %SYS-5-CONFIG_I: Configured from console by azuremaster on vty0 (10.10.50.20)
+003967: *May 11 23:39:11.033: %SYS-5-CONFIG_I: Configured from console by azuremaster on vty0 (10.10.50.20)
+003968: *May 11 23:40:44.306: %SYS-5-CONFIG_I: Configured from console by azuremaster on vty0 (10.10.50.20)
+003969: *May 12 19:48:07.719: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1, changed state to down
+003970: *May 12 19:48:08.725: %LINK-3-UPDOWN: Interface FastEthernet0/1, changed state to down
+003971: *May 12 19:48:13.725: %SYS-6-LOGGINGHOST_STARTSTOP: Logging to host 10.10.10.50 port 514 started - reconnection
+003972: *May 12 19:48:17.827: %LINK-3-UPDOWN: Interface FastEthernet0/1, changed state to up
+003973: *May 12 19:48:18.834: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1, changed state to up
+003974: *May 12 19:48:23.833: %SYS-6-LOGGINGHOST_STARTSTOP: Logging to host 10.10.10.50 port 514 started - reconnection
+003975: *May 12 19:48:38.354: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1, changed state to down
+003976: *May 12 19:48:39.352: %LINK-3-UPDOWN: Interface FastEthernet0/1, changed state to down
+003977: *May 12 19:48:44.352: %SYS-6-LOGGINGHOST_STARTSTOP: Logging to host 10.10.10.50 port 514 started - reconnection
+003978: *May 12 19:49:22.469: %LINK-3-UPDOWN: Interface FastEthernet0/1, changed state to up
+003979: *May 12 19:49:23.476: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1, changed state to up
+003980: *May 12 19:49:28.476: %SYS-6-LOGGINGHOST_STARTSTOP: Logging to host 10.10.10.50 port 514 started - reconnection
+003981: *May 14 09:09:18.015: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/3, changed state to down
+003982: *May 14 09:09:19.014: %LINK-3-UPDOWN: Interface FastEthernet0/3, changed state to down
+003983: *May 14 09:09:21.086: %LINK-3-UPDOWN: Interface FastEthernet0/3, changed state to up
+003984: *May 14 09:09:22.092: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/3, changed state to up
+003985: *May 14 09:09:26.538: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/3, changed state to down
+003986: *May 14 09:09:28.543: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/3, changed state to up
+003987: *May 14 09:09:43.777: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/3, changed state to down
+003988: *May 14 09:09:45.807: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/3, changed state to up
+003989: *May 14 18:55:08.010: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1, changed state to down
+003990: *May 14 18:55:09.017: %LINK-3-UPDOWN: Interface FastEthernet0/1, changed state to down
+003991: *May 14 18:55:11.634: %LINK-3-UPDOWN: Interface FastEthernet0/1, changed state to up
+003992: *May 14 18:55:12.640: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1, changed state to up
+003993: *May 14 18:55:14.016: %SYS-6-LOGGINGHOST_STARTSTOP: Logging to host 10.10.10.50 port 514 started - reconnection
+003994: *May 14 18:55:32.211: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1, changed state to down
+003995: *May 14 18:55:33.218: %LINK-3-UPDOWN: Interface FastEthernet0/1, changed state to down
+003996: *May 14 18:55:38.226: %SYS-6-LOGGINGHOST_STARTSTOP: Logging to host 10.10.10.50 port 514 started - reconnection
+003997: *May 14 18:56:11.881: %LINK-3-UPDOWN: Interface FastEthernet0/1, changed state to up
+003998: *May 14 18:56:12.887: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1, changed state to up
+003999: *May 14 18:56:17.887: %SYS-6-LOGGINGHOST_STARTSTOP: Logging to host 10.10.10.50 port 514 started - reconnection
+004000: *May 14 19:17:01.985: %SYS-5-CONFIG_I: Configured from console by azuremaster on vty0 (10.10.50.20)
+004001: *May 15 22:17:55.485: %SYS-5-CONFIG_I: Configured from console by azuremaster on vty0 (10.10.50.20)
+004002: *May 15 22:20:01.893: %SYS-5-CONFIG_I: Configured from console by azuremaster on vty0 (10.10.50.20)
+SW2#

@@ -1,0 +1,8 @@
+SW2#show snmp user
+
+User name: azuremaster
+Engine ID: 800000090300001EBD6FAA81
+storage-type: nonvolatile        active
+Authentication Protocol: MD5
+Privacy Protocol: AES128
+Group-name: zabbix-admin
