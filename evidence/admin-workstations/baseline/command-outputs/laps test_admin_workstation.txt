@@ -1,0 +1,27 @@
+PS C:\Users\Administrator> Get-LapsADPassword -Identity ADM02
+
+
+ComputerName        : ADM02
+DistinguishedName   : CN=ADM02,OU=Admin Workstation,OU=Corporate,DC=corp,DC=azureuser,DC=org
+Account             : breakglass
+Password            : System.Security.SecureString
+PasswordUpdateTime  : 4/3/2026 12:41:49 PM
+ExpirationTimestamp : 5/3/2026 12:41:49 PM
+Source              : EncryptedPassword
+DecryptionStatus    : Success
+AuthorizedDecryptor : CORP\Domain Admins
+
+
+
+PS C:\Users\Administrator> Get-LapsADPassword -Identity ADM01
+
+
+ComputerName        : ADM01
+DistinguishedName   : CN=ADM01,OU=Admin Workstation,OU=Corporate,DC=corp,DC=azureuser,DC=org
+Account             : breakglass
+Password            : System.Security.SecureString
+PasswordUpdateTime  : 4/3/2026 2:40:32 AM
+ExpirationTimestamp : 5/3/2026 2:40:32 AM
+Source              : EncryptedPassword
+DecryptionStatus    : Success
+AuthorizedDecryptor : CORP\Domain Admins
