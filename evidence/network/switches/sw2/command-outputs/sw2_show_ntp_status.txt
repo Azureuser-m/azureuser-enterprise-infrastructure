@@ -1,0 +1,8 @@
+SW2#show ntp status
+Clock is synchronized, stratum 3, reference is 10.10.10.10
+nominal freq is 119.2092 Hz, actual freq is 119.2092 Hz, precision is 2**17
+reference time is EDACB791.E1D96394 (20:16:17.882 UTC Mon May 11 2026)
+clock offset is 4.3136 msec, root delay is 30.08 msec
+root dispersion is 34.14 msec, peer dispersion is 2.18 msec
+loopfilter state is 'CTRL' (Normal Controlled Loop), drift is 0.000000023 s/s
+system poll interval is 64, last update was 74 sec ago.

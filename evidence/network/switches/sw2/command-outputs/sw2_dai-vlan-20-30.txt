@@ -1,0 +1,15 @@
+SW2#show ip arp inspection vlan 20,30
+
+Source Mac Validation      : Enabled
+Destination Mac Validation : Enabled
+IP Address Validation      : Enabled
+
+ Vlan     Configuration    Operation   ACL Match          Static ACL
+ ----     -------------    ---------   ---------          ----------
+   20     Enabled          Active
+   30     Enabled          Active
+
+ Vlan     ACL Logging      DHCP Logging      Probe Logging
+ ----     -----------      ------------      -------------
+   20     Deny             Deny              Off
+   30     Deny             Deny              Off

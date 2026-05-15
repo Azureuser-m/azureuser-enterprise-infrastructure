@@ -1,0 +1,6 @@
+SW1#show snmp group
+groupname: zabbix-admin                     security model:v3 priv
+contextname: <no context specified>         storage-type: nonvolatile
+readview : v1default                        writeview: <no writeview specified>
+notifyview: <no notifyview specified>
+row status: active

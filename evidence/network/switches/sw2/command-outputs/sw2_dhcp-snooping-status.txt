@@ -1,0 +1,69 @@
+SW2#show ip dhcp snooping
+Switch DHCP snooping is enabled
+DHCP snooping is configured on following VLANs:
+20,30
+DHCP snooping is operational on following VLANs:
+20,30
+DHCP snooping is configured on the following L3 Interfaces:
+
+Insertion of option 82 is disabled
+   circuit-id default format: vlan-mod-port
+   remote-id: redacted(MAC)
+Option 82 on untrusted port is not allowed
+Verification of hwaddr field is enabled
+Verification of giaddr field is enabled
+DHCP snooping trust/rate is configured on the following Interfaces:
+
+Interface                  Trusted    Allow option    Rate limit (pps)
+-----------------------    -------    ------------    ----------------
+FastEthernet0/1            yes        yes             unlimited
+  Custom circuit-ids:
+FastEthernet0/2            yes        yes             unlimited
+  Custom circuit-ids:
+FastEthernet0/4            no         no              10
+  Custom circuit-ids:
+FastEthernet0/5            no         no              50
+  Custom circuit-ids:
+FastEthernet0/6            yes        yes             unlimited
+  Custom circuit-ids:
+FastEthernet0/7            yes        yes             unlimited
+  Custom circuit-ids:
+FastEthernet0/8            yes        yes             unlimited
+  Custom circuit-ids:
+FastEthernet0/9            yes        yes             unlimited
+  Custom circuit-ids:
+FastEthernet0/10           yes        yes             unlimited
+  Custom circuit-ids:
+FastEthernet0/11           yes        yes             unlimited
+  Custom circuit-ids:
+FastEthernet0/12           yes        yes             unlimited
+  Custom circuit-ids:
+FastEthernet0/13           yes        yes             unlimited
+  Custom circuit-ids:
+FastEthernet0/14           yes        yes             unlimited
+  Custom circuit-ids:
+FastEthernet0/15           yes        yes             unlimited
+  Custom circuit-ids:
+FastEthernet0/16           yes        yes             unlimited
+  Custom circuit-ids:
+FastEthernet0/17           yes        yes             unlimited
+  Custom circuit-ids:
+FastEthernet0/18           yes        yes             unlimited
+  Custom circuit-ids:
+FastEthernet0/19           yes        yes             unlimited
+  Custom circuit-ids:
+FastEthernet0/20           yes        yes             unlimited
+  Custom circuit-ids:
+FastEthernet0/21           yes        yes             unlimited
+  Custom circuit-ids:
+FastEthernet0/22           no         no              10
+  Custom circuit-ids:
+FastEthernet0/23           no         no              10
+  Custom circuit-ids:
+FastEthernet0/24           no         no              10
+  Custom circuit-ids:
+GigabitEthernet0/1         yes        yes             unlimited
+  Custom circuit-ids:
+Port-channel1              yes        yes             unlimited
+  Custom circuit-ids:
+SW2#
