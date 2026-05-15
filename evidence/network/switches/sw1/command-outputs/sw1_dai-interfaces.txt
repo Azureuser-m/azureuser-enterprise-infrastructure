@@ -1,0 +1,32 @@
+SW1#show ip arp inspection interfaces
+
+ Interface        Trust State     Rate (pps)    Burst Interval
+ ---------------  -----------     ----------    --------------
+ Fa0/1            Trusted               None               N/A
+ Fa0/2            Trusted               None               N/A
+ Fa0/3            Untrusted               15                 1
+ Fa0/4            Untrusted               10                 1
+ Fa0/5            Untrusted               15                 1
+ Fa0/6            Trusted               None               N/A
+ Fa0/7            Trusted               None               N/A
+ Fa0/8            Trusted               None               N/A
+ Fa0/9            Trusted               None               N/A
+ Fa0/10           Trusted               None               N/A
+ Fa0/11           Trusted               None               N/A
+ Fa0/12           Trusted               None               N/A
+ Fa0/13           Trusted               None               N/A
+ Fa0/14           Trusted               None               N/A
+ Fa0/15           Trusted               None               N/A
+ Fa0/16           Trusted               None               N/A
+ Fa0/17           Trusted               None               N/A
+ Fa0/18           Trusted               None               N/A
+ Fa0/19           Trusted               None               N/A
+ Fa0/20           Trusted               None               N/A
+ Fa0/21           Trusted               None               N/A
+ Fa0/22           Untrusted               10                 1
+ Fa0/23           Untrusted               10                 1
+ Fa0/24           Untrusted               10                 1
+ Gi0/1            Trusted               None               N/A
+ Gi0/2            Untrusted               15                 1
+ Po1              Trusted               None               N/A
+SW1#

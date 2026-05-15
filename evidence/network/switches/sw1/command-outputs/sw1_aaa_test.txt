@@ -1,0 +1,9 @@
+SW1#test aaa group tacacs+ azuremaster redacted legacy
+Attempting authentication test to server-group tacacs+ using tacacs+
+User was successfully authenticated.
+
+SW1#test aaa group tacacs+ younglord redacted legacy
+Attempting authentication test to server-group tacacs+ using tacacs+
+User was successfully authenticated.
+
+SW1#

@@ -1,0 +1,81 @@
+SW1#show logging
+Syslog logging: enabled (0 messages dropped, 0 messages rate-limited, 0 flushes, 0 overruns, xml disabled, filtering disabled)
+
+No Active Message Discriminator.
+
+
+
+No Inactive Message Discriminator.
+
+
+    Console logging: level debugging, 3413 messages logged, xml disabled,
+                     filtering disabled
+    Monitor logging: level debugging, 0 messages logged, xml disabled,
+                     filtering disabled
+    Buffer logging:  level debugging, 3414 messages logged, xml disabled,
+                    filtering disabled
+    Exception Logging: size (4096 bytes)
+    Count and timestamp logging messages: disabled
+    File logging: disabled
+    Persistent logging: disabled
+
+No active filter modules.
+
+    Trap logging: level informational, 1862 message lines logged
+        Logging to 10.10.10.50  (udp port 514, audit disabled,
+              link up),
+              1294 message lines logged,
+              0 message lines rate-limited,
+              0 message lines dropped-by-MD,
+              xml disabled, sequence number disabled
+              filtering disabled
+        Logging Source-Interface:       VRF Name:
+        FastEthernet0/1
+
+Log Buffer (4096 bytes):
+vty0 (10.10.50.20)
+003371: *May 11 22:10:14.041: %LINK-5-CHANGED: Interface FastEthernet0/22, changed state to administratively down
+003372: *May 11 22:10:14.050: %LINK-5-CHANGED: Interface FastEthernet0/23, changed state to administratively down
+003373: *May 11 22:10:14.050: %LINK-5-CHANGED: Interface FastEthernet0/24, changed state to administratively down
+003374: *May 11 22:10:35.432: DHCP_SNOOPING: checking expired snoop binding entries
+003375: *May 11 22:12:35.431: DHCP_SNOOPING: checking expired snoop binding entries
+003376: *May 11 22:14:21.673: %LINK-5-CHANGED: Interface GigabitEthernet0/2, changed state to administratively down
+003377: *May 11 22:14:26.589: %SYS-5-CONFIG_I: Configured from console by azuremaster on vty0 (10.10.50.20)
+003378: *May 11 22:14:35.430: DHCP_SNOOPING: checking expired snoop binding entries
+003379: *May 11 22:16:35.429: DHCP_SNOOPING: checking expired snoop binding entries
+003380: *May 11 22:18:35.428: DHCP_SNOOPING: checking expired snoop binding entries
+003381: *May 11 22:20:35.427: DHCP_SNOOPING: checking expired snoop binding entries
+003382: *May 11 22:22:35.427: DHCP_SNOOPING: checking expired snoop binding entries
+003383: *May 11 22:24:35.426: DHCP_SNOOPING: checking expired snoop binding entries
+003384: *May 11 22:25:30.539: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/4, changed state to down
+003385: *May 11 22:25:31.545: %LINK-3-UPDOWN: Interface FastEthernet0/4, changed state to down
+003386: *May 11 22:25:41.930: %LINK-3-UPDOWN: Interface FastEthernet0/4, changed state to up
+003387: *May 11 22:25:42.937: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/4, changed state to up
+003388: *May 11 22:25:44.858: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/4, changed state to down
+003389: *May 11 22:25:46.880: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/4, changed state to up
+003390: *May 11 22:25:54.580: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/4, changed state to down
+003391: *May 11 22:25:56.594: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/4, changed state to up
+003392: *May 11 22:26:35.433: DHCP_SNOOPING: checking expired snoop binding entries
+003393: *May 11 22:28:35.432: DHCP_SNOOPING: checking expired snoop binding entries
+003394: *May 11 22:30:35.431: DHCP_SNOOPING: checking expired snoop binding entries
+003395: *May 11 22:32:35.430: DHCP_SNOOPING: checking expired snoop binding entries
+003396: *May 11 22:34:35.429: DHCP_SNOOPING: checking expired snoop binding entries
+003397: *May 11 22:36:35.428: DHCP_SNOOPING: checking expired snoop binding entries
+003398: *May 11 22:38:35.427: DHCP_SNOOPING: checking expired snoop binding entries
+003399: *May 11 22:40:35.426: DHCP_SNOOPING: checking expired snoop binding entries
+003400: *May 11 22:42:35.425: DHCP_SNOOPING: checking expired snoop binding entries
+003401: *May 11 22:44:35.433: DHCP_SNOOPING: checking expired snoop binding entries
+003402: *May 11 22:46:35.432: DHCP_SNOOPING: checking expired snoop binding entries
+003403: *May 11 22:48:35.431: DHCP_SNOOPING: checking expired snoop binding entries
+003404: *May 11 22:50:35.447: DHCP_SNOOPING: checking expired snoop binding entries
+003405: *May 11 22:52:35.429: DHCP_SNOOPING: checking expired snoop binding entries
+003406: *May 11 22:54:35.428: DHCP_SNOOPING: checking expired snoop binding entries
+003407: *May 11 22:56:35.427: DHCP_SNOOPING: checking expired snoop binding entries
+003408: *May 11 22:58:35.426: DHCP_SNOOPING: checking expired snoop binding entries
+003409: *May 11 23:00:35.425: DHCP_SNOOPING: checking expired snoop binding entries
+003410: *May 11 23:02:35.432: DHCP_SNOOPING: checking expired snoop binding entries
+003411: *May 11 23:02:52.881: %SYS-5-CONFIG_I: Configured from console by azuremaster on vty0 (10.10.50.20)
+003412: *May 11 23:04:35.431: DHCP_SNOOPING: checking expired snoop binding entries
+003413: *May 11 23:06:35.430: DHCP_SNOOPING: checking expired snoop binding entries
+003414: *May 11 23:08:35.429: DHCP_SNOOPING: checking expired snoop binding entries
+SW1#
