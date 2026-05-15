@@ -55,9 +55,9 @@ Alerts are forwarded to Slack via trigger actions and user media:
 - **Trigger action**: `Report problems to Zabbix administrators` fires when trigger severity is ≥ *High*, sending a message to the **Zabbix administrators** user group via Slack.
 - **User media**: Slack channel `#zabbix`, active 1–7 / 00:00–24:00, enabled for severities Warning, Average, High, and Disaster.
 
-See `zbx_export_mediatypes.yaml` for configuration details and **validation.md** for verification procedures.
+See [zbx_export_mediatypes.yaml](../../configs/servers/ZBX01/command-outputs/zbx_export_mediatypes.yaml) for configuration details and [validation.md](../../validation.md) for verification procedures.
 
-See `zabbix_host_inventory.md` for the full host inventory, interface types, assigned templates, and host tags.
+See [zabbix_host_inventory.md](../zabbix_host_inventory.md) for the full host inventory, interface types, assigned templates, and host tags.
 
 ### Considerations for Production
 

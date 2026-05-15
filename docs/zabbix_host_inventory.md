@@ -34,4 +34,4 @@
 | WAZ01 | WAZ01 | 10.10.10.50 | Agent | Linux by Zabbix agent active | Linux servers | — | — | — |
 | ZBX01 | Zabbix Server 01 | — | Agent | Linux by Zabbix agent, Zabbix server health | Zabbix servers | Linux 6.8.0-107-generic (Ubuntu 24.04) | — | — |
 
-see `zbx_export_hosts.yaml` for the full inventory export in YAML format.
+See [zbx_export_hosts.yaml](../configs/servers/ZBX01/command-outputs/zbx_export_hosts.yaml) for the full inventory export in YAML format.
