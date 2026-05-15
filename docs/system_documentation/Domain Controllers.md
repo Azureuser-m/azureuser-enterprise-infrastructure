@@ -129,9 +129,3 @@ The CA supports domain certificate enrollment and publishes certificate revocati
 DC02 uses IIS to publish PKI files. The `pki` virtual directory maps to `C:\pki` and is available over HTTP on port 80 through the Default Web Site.
 
 Certificate auto-enrollment is applied to both domain controllers through Group Policy. This allows domain-managed certificate enrollment, renewal, pending request processing, revoked certificate cleanup, and certificate template management from Active Directory.
-
-### Items to Review Later
-
-* Review the DFS Replication event warning shown in the DC01 health output.
-* Add backup and restore validation when the backup evidence is ready.
-* Decide whether DHCP screenshots belong under domain controller documentation, DHCP documentation, or both.
